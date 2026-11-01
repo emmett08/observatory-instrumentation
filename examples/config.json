@@ -1,0 +1,15 @@
+{
+  "schema": "observatory.instrumentation/1",
+  "protocol_id": "engineering-study-v1",
+  "repositories": [
+    {
+      "repository": "owner/application",
+      "workflow_paths": [".github/workflows/observatory.yml"]
+    }
+  ],
+  "tasks": [],
+  "discovery": {
+    "lookback_days": 7,
+    "max_runs_per_repository": 100
+  }
+}

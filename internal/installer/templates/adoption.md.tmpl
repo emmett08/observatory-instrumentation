@@ -1,0 +1,55 @@
+# Observatory adoption
+
+This repository records one explicit command through the pinned
+[Observatory instrumentation action](https://github.com/emmett08/observatory-instrumentation/tree/[[.ActionRef]]).
+The generated workflow is `.github/workflows/observatory.yml`; it runs on pull
+requests and manual dispatch. Install the selected tool and its dependencies in
+that workflow when the standard Ubuntu runner does not already provide them.
+
+Protocol: `[[.Protocol]]`. The reviewed `.observatory/config.json` scopes this
+repository and workflow. Keep the same protocol, repository scope and optional
+task aliases in the private collector's configuration. Public configuration
+must contain no credentials, participant identities, activity or responses.
+
+## Link a task
+
+Create an issue with **Observatory study task**, then put `Closes #<number>` in
+the implementation PR's description. One unambiguous closing issue produces a
+stable task ID, `github-issue-<repository-id>-<issue-number>`. Missing API access,
+missing links and multiple closing issues leave task identity unknown. Explicit
+aliases can be registered in the config when the study needs another ID.
+GitHub actor, triggering actor and event remain separate from declared
+controller/session provenance. The generated workflow declares controller
+unknown; it does not identify a human from a GitHub account.
+
+## Observe the selected command
+
+The generated workflow wraps only the command supplied during installation.
+Other tools, jobs and workstation work need their own wrappers or observations.
+Configuration and task-resolution files are designated hashed inputs. Each job
+publishes its own immutable start/completion receipts. Publication after a
+failed command is attempted, but runner loss can prevent delivery.
+
+The collector must compare receipts with GitHub run, attempt and job metadata
+and preserve failed, cancelled, skipped and incompletely observed executions.
+Run discovery again before artifacts expire. The generated retention policy is
+the action default; verify it against the study's durable collection schedule.
+
+## Configure private effort collection
+
+Follow the pinned [private runner guide](https://github.com/emmett08/observatory-instrumentation/blob/[[.ActionRef]]/docs/private-runner.md).
+Use a private control repository and trusted runner. Keep raw activity, source
+configuration, participant forms and responses in private storage. Public
+repositories receive only deliberately published aggregate reports.
+
+The optional effort-observation issue form records a declared summary. It is
+separate from the hash-bound randomized review forms used by the estimator.
+Human estimates remain unavailable until actual observations support them.
+CI duration is tool runtime and is never converted into human labour.
+
+## Updates
+
+The action is pinned to `[[.ActionRef]]`; review a new full commit before changing
+it. Rerunning installation is idempotent only when generated files are identical.
+Existing customised files are never overwritten. Adapt the proposed workflow in
+an ordinary reviewed PR when adding dependencies, matrices or more wrappers.
