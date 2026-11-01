@@ -1,0 +1,18 @@
+{
+  "schema": "observatory.discovered-effort-links/1",
+  "protocol_id": "observatory-instrumentation-demo-v1",
+  "links": [
+    {
+      "task_id": "github-issue-1442160414-1",
+      "repository": "emmett08/observatory-instrumentation",
+      "issue_number": 1,
+      "pull_requests": [
+        2
+      ],
+      "branches": [
+        "feat/reusable-adoption-kit"
+      ],
+      "projects": []
+    }
+  ]
+}

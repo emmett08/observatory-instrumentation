@@ -38,3 +38,13 @@ causal AI productivity effect.
 See core's [execution contract](https://github.com/emmett08/engineering-work-observatory/blob/32420a941a97221709447f8b71d6715216c566e9/docs/execution-evidence.md)
 and [effort guide](https://github.com/emmett08/engineering-work-observatory/blob/32420a941a97221709447f8b71d6715216c566e9/docs/effort-estimation.md)
 for the canonical schemas and measurement assumptions.
+
+## Occasional effort observations
+
+For a worked aggregate observation, see
+[EngArg #51](https://github.com/emmett08/engarg/issues/51), linked to task #49
+and PR #50. It records the user's declared three human person-minutes separately
+from GitHub's issue/PR lifecycle timestamps. Exact work start/end and the
+timer-versus-recall method remain unknown. Such a declaration supplements the
+execution evidence; it is not automatically treated as a sampled response.
+

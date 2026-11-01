@@ -6,6 +6,10 @@ the reusable action, Go installer, task/run discovery and adoption templates.
 [Engineering Work Observatory](https://github.com/emmett08/engineering-work-observatory)
 supplies the recorder, validated collector, evidence store and estimator.
 
+The [live demonstration](docs/live-demo/README.md) verifies the reusable action,
+automatic issue linkage, receipt collection and repeated-delivery deduplication
+on Ubuntu and macOS.
+
 The action sees only commands passed through its wrappers. It cannot observe
 every tool's internals, another job or work outside Actions. GitHub actor,
 triggering actor and event are retained separately from the declared controller
