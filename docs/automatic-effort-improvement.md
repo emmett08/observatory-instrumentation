@@ -7,6 +7,9 @@ prediction model has improved. It needs no private runner, workstation activity,
 AI API or personal access token. It uses the same canonical implementation as
 Observatory core; this repository does not maintain another model or importer.
 
+The [verified hosted run](observation-learning-evidence/README.md) retains the
+demo result and artifact hashes.
+
 For the real pilot, [EngArg #51](https://github.com/emmett08/engarg/issues/51)
 declares **three human person-minutes** for task
 [EngArg #49](https://github.com/emmett08/engarg/issues/49) and
