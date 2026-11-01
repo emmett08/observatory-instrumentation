@@ -47,4 +47,3 @@ and PR #50. It records the user's declared three human person-minutes separately
 from GitHub's issue/PR lifecycle timestamps. Exact work start/end and the
 timer-versus-recall method remain unknown. Such a declaration supplements the
 execution evidence; it is not automatically treated as a sampled response.
-
