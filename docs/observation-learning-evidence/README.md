@@ -21,7 +21,7 @@ use the same observation and synthetic fixture, so their counts must not be
 combined as independent evidence.
 
 The full public report and source snapshot are retained in
-[Observatory core](https://github.com/emmett08/engineering-work-observatory/tree/feat/public-observation-learning/docs/observation-learning-evidence).
+[Observatory core](https://github.com/emmett08/engineering-work-observatory/tree/b40ce9ffecfa86321210329f9d752e43d459a6c8/docs/observation-learning-evidence).
 For ongoing default-branch collection after merge, perform the first manual
 `bootstrap=true` run, then use the schedule or ordinary manual dispatches. See
 the [operation and recovery guide](../automatic-effort-improvement.md).
