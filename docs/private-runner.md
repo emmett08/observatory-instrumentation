@@ -138,8 +138,10 @@ its own marked aggregate comments and omits participant identities, raw
 activity and response contents.
 
 Public effort-observation issues are optional supporting declarations. They
-cannot substitute for responses bound to the saved frame and sample, and are
-not inserted into the estimator automatically.
+cannot substitute for responses bound to the saved frame and sample. The
+separate [public hosted demo](automatic-effort-improvement.md) automatically
+imports configured declarations and evaluates task-total predictions without a
+private runner; it does not insert them into this sampled-interval estimator.
 
 ## Recover and extend
 

@@ -1,9 +1,16 @@
 # Compatibility and releases
 
 This repository is the integration/distribution layer. The pinned Observatory
-core is `32420a941a97221709447f8b71d6715216c566e9`, which supplies the recorder,
+core for the action and private collector is `32420a941a97221709447f8b71d6715216c566e9`, which supplies the recorder,
 receipt importer, platform reconciliation and sampled-effort pipeline. This kit
 does not fork those algorithms or schemas.
+
+The separate public observation-learning workflow requires core
+`159f3de6345d1f787922a52e642e21b7373f4659`, which adds the versioned issue importer,
+task-total prediction demo and verified checkpoints. Its reusable-workflow pin
+and `core-ref` input must match. This newer consumer remains compatible with
+the recorder's existing receipt schema; enabling the learning demo does not
+require changing the recording action or private sampled-effort pipeline.
 
 The Go CLI targets Go 1.26.10. The composite action installs that version and
 expects Python 3 and `gh` on standard Ubuntu/macOS runners. The private template

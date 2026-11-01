@@ -1,14 +1,21 @@
 # Observatory instrumentation
 
 Record explicit tool executions in GitHub Actions and connect them to issues,
-pull requests and an optional private human-effort study. This repository supplies
-the reusable action, Go installer, task/run discovery and adoption templates.
+pull requests, public effort declarations and an optional private human-effort
+study. This repository supplies the reusable action, Go installer, task/run
+discovery and adoption templates.
 [Engineering Work Observatory](https://github.com/emmett08/engineering-work-observatory)
 supplies the recorder, validated collector, evidence store and estimator.
 
 The [live demonstration](docs/live-demo/README.md) verifies the reusable action,
 automatic issue linkage, receipt collection and repeated-delivery deduplication
 on Ubuntu and macOS.
+
+The [automatic observation and prediction demo](docs/automatic-effort-improvement.md)
+imports public issues on a GitHub-hosted runner, retains observed revisions and
+compares candidate models against separate validation data. No private runner
+is needed. The current real pilot has insufficient training data; a separate
+synthetic example demonstrates conditional model improvement.
 
 The action sees only commands passed through its wrappers. It cannot observe
 every tool's internals, another job or work outside Actions. GitHub actor,
@@ -65,13 +72,17 @@ storage, credentials and optional ActivityWatch sources. For an effort study,
 declare the participant/time frame, freeze predictions and answer the selected
 private review forms. No continuous timesheet is required, but the code cannot
 invent those observations. Missing responses leave human estimates unavailable.
-The optional public effort issue form records a separate declared observation;
-it does not automatically enter the estimator.
+The optional public effort issue form records a separate declared observation.
+The [public observation workflow](docs/automatic-effort-improvement.md) imports
+these from configured open and closed issues and can use suitable complete task
+totals for task-level prediction. They never substitute for private sampled
+responses.
 
 | Material | Purpose |
 | --- | --- |
 | [Installation](docs/installation.md) | Installer, generated workflow and issue linking |
 | [Configuration and discovery](docs/configuration.md) | Shared IDs, scope, unknown attribution and bounded acquisition |
+| [Automatic observation demo](docs/automatic-effort-improvement.md) | Hosted import, revisions, reports and conditional model improvement |
 | [Private runner](docs/private-runner.md) | Collection, sampled forms, reporting and recovery |
 | [Evidence contract](docs/evidence.md) | Observed versus declared evidence and interpretation limits |
 | [Examples](examples/) | Public configuration and incomplete private effort template |
