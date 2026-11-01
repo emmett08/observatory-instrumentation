@@ -1,0 +1,10 @@
+{
+  "schema": "observatory.instrumentation-live-verification/1",
+  "run_id": "41342977554",
+  "receipt_count": 4,
+  "deduplicated": true,
+  "linked_task_ids": [
+    "github-issue-1442160414-1"
+  ],
+  "scope": "Two instrumented matrix jobs; other tools and human effort are not inferred."
+}

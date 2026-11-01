@@ -1,0 +1,17 @@
+{
+  "schema": "observatory.linked-pilot/1",
+  "protocol_id": "observatory-instrumentation-demo-v1",
+  "tasks": [
+    {
+      "task_id": "github-issue-1442160414-1",
+      "repository": "emmett08/observatory-instrumentation",
+      "issue_number": 1,
+      "pull_requests": [
+        2
+      ],
+      "run_ids": [
+        41342977554
+      ]
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "schema": "observatory.instrumentation/1",
+  "protocol_id": "observatory-instrumentation-demo-v1",
+  "repositories": [
+    {
+      "repository": "emmett08/observatory-instrumentation",
+      "workflow_paths": [".github/workflows/ci.yml"]
+    }
+  ],
+  "tasks": [],
+  "discovery": {"lookback_days": 7, "max_runs_per_repository": 100}
+}

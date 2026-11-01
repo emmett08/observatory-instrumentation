@@ -1,0 +1,138 @@
+{
+  "execution": {
+    "completed_invocation_count": 2,
+    "invocation_count": 2,
+    "invocations": [
+      {
+        "actor": "emmett08",
+        "compared_fields": [
+          "actor",
+          "event_name",
+          "repository_id",
+          "triggering_actor"
+        ],
+        "conflicting_fields": [],
+        "declared_controller": "unknown",
+        "declared_session_present": false,
+        "delivery": "github_artifact_collector",
+        "event_name": "pull_request",
+        "exit_code": 0,
+        "invocation_id": "0f2ac9ff-3e72-4735-ac16-249f4db38a39",
+        "job_id": 124956729999,
+        "job_name": "Instrumentation (macos-latest)",
+        "lifecycle": "start_and_completion_observed",
+        "platform_comparison": "compared_with_retained_api",
+        "receipt_ids": [
+          "execution/1442160414/41342977554/1/0f2ac9ff-3e72-4735-ac16-249f4db38a39/completion",
+          "execution/1442160414/41342977554/1/0f2ac9ff-3e72-4735-ac16-249f4db38a39/start"
+        ],
+        "result": "success",
+        "run_attempt": 1,
+        "run_id": 41342977554,
+        "runtime_ms": 11383,
+        "tool": "go",
+        "triggering_actor": "emmett08"
+      },
+      {
+        "actor": "emmett08",
+        "compared_fields": [
+          "actor",
+          "event_name",
+          "repository_id",
+          "triggering_actor"
+        ],
+        "conflicting_fields": [],
+        "declared_controller": "unknown",
+        "declared_session_present": false,
+        "delivery": "github_artifact_collector",
+        "event_name": "pull_request",
+        "exit_code": 0,
+        "invocation_id": "ae1acd24-7db0-428f-b046-30c4c30d3846",
+        "job_id": 124956729737,
+        "job_name": "Instrumentation (ubuntu-latest)",
+        "lifecycle": "start_and_completion_observed",
+        "platform_comparison": "compared_with_retained_api",
+        "receipt_ids": [
+          "execution/1442160414/41342977554/1/ae1acd24-7db0-428f-b046-30c4c30d3846/completion",
+          "execution/1442160414/41342977554/1/ae1acd24-7db0-428f-b046-30c4c30d3846/start"
+        ],
+        "result": "success",
+        "run_attempt": 1,
+        "run_id": 41342977554,
+        "runtime_ms": 13992,
+        "tool": "go",
+        "triggering_actor": "emmett08"
+      }
+    ],
+    "jobs": [
+      {
+        "conclusion": "success",
+        "job_id": 124956729737,
+        "run_attempt": 1,
+        "run_id": 41342977554,
+        "selected_task_receipts": "matched",
+        "status": "completed"
+      },
+      {
+        "conclusion": "success",
+        "job_id": 124956729999,
+        "run_attempt": 1,
+        "run_id": 41342977554,
+        "selected_task_receipts": "matched",
+        "status": "completed"
+      },
+      {
+        "conclusion": null,
+        "job_id": 124956912738,
+        "run_attempt": 1,
+        "run_id": 41342977554,
+        "selected_task_receipts": "none_or_unresolved",
+        "status": "in_progress"
+      }
+    ],
+    "jobs_without_matched_task_receipts": 1,
+    "receipt_integrity": "verified_store",
+    "reported_runtime_seconds": 25.375,
+    "repository_metadata_observed": true,
+    "selected_runs": [
+      {
+        "conclusion": null,
+        "metadata_observed": true,
+        "run_id": 41342977554,
+        "status": "in_progress",
+        "url": "https://github.com/emmett08/observatory-instrumentation/actions/runs/41342977554"
+      }
+    ],
+    "unlinked_invocations_in_selected_runs": 0
+  },
+  "human_effort": {
+    "estimate_person_hours": null,
+    "mode": "estimate_unavailable",
+    "proxy_hours": null,
+    "sampling": null,
+    "synthetic": false,
+    "unavailable_reasons": [
+      "private_activity_and_sampled_responses_not_configured"
+    ]
+  },
+  "issue_number": 1,
+  "issue_url": "https://github.com/emmett08/observatory-instrumentation/issues/1",
+  "limitations": [
+    "Tool runtime is elapsed execution time, not human labour. Parallel runtimes may overlap.",
+    "Receipt hashes and schema validation establish integrity, not truthful controller, session or task declarations.",
+    "Missing receipts can mean uninstrumented work or failed delivery; they do not establish zero tool use.",
+    "Issue/PR links do not establish acceptance, retained quality or a causal AI effect.",
+    "Sampled responses are human declarations. Sampling standard errors exclude recall, attribution, roster and model-drift errors; they are not accuracy guarantees."
+  ],
+  "manifest_sha256": "a0a1adf77ff100572b7fc11225089e72e8fc09049beebe336c96e61d1b3bb9e0",
+  "protocol_id": "observatory-instrumentation-demo-v1",
+  "pull_request_urls": [
+    "https://github.com/emmett08/observatory-instrumentation/pull/2"
+  ],
+  "pull_requests": [
+    2
+  ],
+  "repository": "emmett08/observatory-instrumentation",
+  "schema": "observatory.linked-pilot-report/1",
+  "task_id": "github-issue-1442160414-1"
+}

@@ -1,0 +1,204 @@
+name: Observatory instrumentation
+description: Resolve a linked task, configure explicit Observatory tool wrappers, or publish a job's immutable receipt bundle.
+author: Engineering Work Observatory
+
+inputs:
+  mode:
+    description: setup resolves task identity and configures recording; publish uploads the current job's recorded evidence.
+    required: false
+    default: setup
+  config:
+    description: Reviewed instrumentation configuration inside the caller's checkout, relative to GITHUB_WORKSPACE.
+    required: false
+    default: .observatory/config.json
+  token:
+    description: Read-only GitHub token for resolving PR-to-issue links; never included in receipts.
+    required: false
+    default: ${{ github.token }}
+  directory:
+    description: Job-local recording directory; defaults to the core action's generated directory.
+    required: false
+    default: ''
+  protocol-id:
+    description: Optional expected protocol ID; setup fails if it differs from the reviewed configuration.
+    required: false
+    default: ''
+  task-id:
+    description: Optional caller-declared task alias registered in the configuration; otherwise use an unambiguous linked issue.
+    required: false
+    default: ''
+  controller:
+    description: Caller-declared controller (human, assistant, automation, unknown), separate from GitHub account identity.
+    required: false
+    default: unknown
+  controller-provenance:
+    description: Opaque supporting provenance reference; do not supply credentials, prompt text or private activity.
+    required: false
+    default: ''
+  session-id:
+    description: Caller-declared assistant/controller session ID; leave empty when unavailable.
+    required: false
+    default: ''
+  job-name:
+    description: Exact matrix-expanded GitHub job display name for independent reconciliation.
+    required: false
+    default: unknown
+  job-id:
+    description: Numeric GitHub job ID if independently available; github.job is a key rather than this ID.
+    required: false
+    default: ''
+  matrix:
+    description: Explicit flat allowlisted matrix JSON; never pass an environment or context dump.
+    required: false
+    default: '{}'
+  retention-days:
+    description: Receipt artifact retention; durable collection must run before expiration.
+    required: false
+    default: '30'
+
+outputs:
+  recorder:
+    description: Absolute path to the pinned core Python recorder; invoke with python3.
+    value: ${{ steps.setup.outputs.recorder }}
+  directory:
+    description: Job-local receipt directory; also exported as OBSERVATORY_EVIDENCE_DIR.
+    value: ${{ steps.setup.outputs.directory }}
+  protocol-id:
+    description: Protocol declared in the reviewed instrumentation configuration.
+    value: ${{ steps.resolve.outputs.protocol-id }}
+  task-id:
+    description: Resolved or registered caller-declared task ID; empty means unknown.
+    value: ${{ steps.resolve.outputs.task-id }}
+  config-path:
+    description: Absolute reviewed configuration path, suitable for an explicitly designated input hash.
+    value: ${{ steps.paths.outputs.config-path }}
+  resolution-path:
+    description: Allowlisted resolution evidence JSON; optionally hash it as a designated wrapper input.
+    value: ${{ steps.resolve.outputs.resolution-path }}
+  artifact-name:
+    description: Content-identified uploaded receipt bundle name in publish mode.
+    value: ${{ steps.publish.outputs.artifact-name }}
+  bundle-sha256:
+    description: SHA-256 of the uploaded bundle JSON bytes in publish mode.
+    value: ${{ steps.publish.outputs.bundle-sha256 }}
+
+runs:
+  using: composite
+  steps:
+    - name: Validate instrumentation mode
+      if: always()
+      shell: bash
+      env:
+        OBSERVATORY_MODE: ${{ inputs.mode }}
+      run: |
+        case "$OBSERVATORY_MODE" in
+          setup|publish) ;;
+          *) echo 'Observatory mode must be setup or publish.' >&2; exit 2 ;;
+        esac
+
+    - name: Prepare setup paths
+      if: inputs.mode == 'setup'
+      id: paths
+      shell: bash
+      env:
+        CONFIG_INPUT: ${{ inputs.config }}
+      run: |
+        set -euo pipefail
+        command -v python3 >/dev/null || { echo 'Observatory setup requires Python 3.' >&2; exit 2; }
+        command -v gh >/dev/null || { echo 'Observatory setup requires the GitHub CLI.' >&2; exit 2; }
+        python3 - <<'PY'
+        import os
+        from pathlib import Path
+        import tempfile
+        os.umask(0o077)
+        workspace = Path(os.environ['GITHUB_WORKSPACE']).resolve()
+        config = (workspace / os.environ['CONFIG_INPUT']).resolve()
+        if workspace not in config.parents or not config.is_file():
+            raise SystemExit('Instrumentation config must be a file inside the caller checkout.')
+        temporary = Path(tempfile.mkdtemp(prefix='observatory-instrumentation-', dir=os.environ['RUNNER_TEMP']))
+        outputs = {
+            'config-path': str(config),
+            'cli-path': str(temporary / 'observatory-instrumentation'),
+            'resolution-path': str(temporary / 'resolution.json'),
+        }
+        if any('\n' in value or '\r' in value for value in outputs.values()):
+            raise SystemExit('Instrumentation paths must not contain line breaks.')
+        with open(os.environ['GITHUB_OUTPUT'], 'a') as output:
+            for key, value in outputs.items():
+                output.write(f'{key}={value}\n')
+        PY
+
+    - name: Install the pinned integration toolchain
+      if: inputs.mode == 'setup'
+      uses: actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16 # v6
+      with:
+        go-version: '1.26.10'
+        cache: false
+        check-latest: false
+
+    - name: Build the reviewed integration CLI
+      if: inputs.mode == 'setup'
+      shell: bash
+      working-directory: ${{ github.action_path }}
+      env:
+        CLI_PATH: ${{ steps.paths.outputs.cli-path }}
+        GOTOOLCHAIN: local
+        GOWORK: 'off'
+        GOPROXY: 'off'
+        GOSUMDB: 'off'
+      run: go build -trimpath -o "$CLI_PATH" ./cmd/observatory-instrumentation
+
+    - name: Resolve the registered task and observed issue links
+      if: inputs.mode == 'setup'
+      id: resolve
+      shell: bash
+      env:
+        CLI_PATH: ${{ steps.paths.outputs.cli-path }}
+        CONFIG_PATH: ${{ steps.paths.outputs.config-path }}
+        RESOLUTION_PATH: ${{ steps.paths.outputs.resolution-path }}
+        DECLARED_TASK: ${{ inputs.task-id }}
+        GH_TOKEN: ${{ inputs.token }}
+      run: |
+        set -euo pipefail
+        args=(resolve --config "$CONFIG_PATH" --repository "$GITHUB_REPOSITORY"
+          --event-path "$GITHUB_EVENT_PATH" --event-name "$GITHUB_EVENT_NAME"
+          --output "$RESOLUTION_PATH" --github-output "$GITHUB_OUTPUT")
+        [[ -z "$DECLARED_TASK" ]] || args+=(--task-id "$DECLARED_TASK")
+        "$CLI_PATH" "${args[@]}"
+
+    - name: Check the expected protocol
+      if: inputs.mode == 'setup'
+      shell: bash
+      env:
+        EXPECTED_PROTOCOL: ${{ inputs.protocol-id }}
+        RESOLVED_PROTOCOL: ${{ steps.resolve.outputs.protocol-id }}
+      run: |
+        if [[ -n "$EXPECTED_PROTOCOL" && "$EXPECTED_PROTOCOL" != "$RESOLVED_PROTOCOL" ]]; then
+          echo 'Expected protocol differs from the reviewed instrumentation configuration.' >&2
+          exit 2
+        fi
+
+    - name: Configure the pinned Observatory recorder
+      if: inputs.mode == 'setup'
+      id: setup
+      uses: emmett08/engineering-work-observatory@32420a941a97221709447f8b71d6715216c566e9
+      with:
+        mode: setup
+        directory: ${{ inputs.directory }}
+        protocol-id: ${{ steps.resolve.outputs.protocol-id }}
+        task-id: ${{ steps.resolve.outputs.task-id }}
+        controller: ${{ inputs.controller }}
+        controller-provenance: ${{ inputs.controller-provenance }}
+        session-id: ${{ inputs.session-id }}
+        job-name: ${{ inputs.job-name }}
+        job-id: ${{ inputs.job-id }}
+        matrix: ${{ inputs.matrix }}
+
+    - name: Publish the pinned Observatory receipt bundle
+      if: always() && inputs.mode == 'publish'
+      id: publish
+      uses: emmett08/engineering-work-observatory@32420a941a97221709447f8b71d6715216c566e9
+      with:
+        mode: publish
+        directory: ${{ inputs.directory }}
+        retention-days: ${{ inputs.retention-days }}

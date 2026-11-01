@@ -1,0 +1,25 @@
+{
+  "schema": "observatory.effort-config/1",
+  "protocol_id": "engineering-study-v1",
+  "frame_id": "configure-real-participant-window-before-use",
+  "frames": [
+    {
+      "person_id": "configure-participant",
+      "start": "2026-11-01T09:00:00Z",
+      "end": "2026-11-01T10:00:00Z"
+    }
+  ],
+  "interval_minutes": 15,
+  "sources": [
+    {
+      "person_id": "configure-participant",
+      "device_id": "configure-device",
+      "afk_bucket": "configure-afk-bucket",
+      "context_buckets": ["configure-context-bucket"]
+    }
+  ],
+  "links": [],
+  "frame_complete": false,
+  "attended_waiting_counts": false,
+  "synthetic": false
+}

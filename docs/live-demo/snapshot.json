@@ -1,0 +1,2001 @@
+{
+  "schema": "observatory.snapshot/1",
+  "calculation_version": "observatory.task-accounting/1",
+  "package_version": "0.1.0",
+  "implementation_revision": "32420a941a97221709447f8b71d6715216c566e9",
+  "implementation_source_sha256": "b85544bac63e33282c5a1ffd5e8640809d207bf096d1d5748b4cb58de85d0e5e",
+  "as_of": "2026-11-01T19:43:21.455674357Z",
+  "records": [
+    {
+      "record": {
+        "id": "coverage:0d7c664569628d5bd44e5165d5fce31405916cc467441a32c600c83c8e4d07c9",
+        "kind": "source_record",
+        "data": {
+          "coverage": {
+            "detail": null,
+            "pages": 1,
+            "records": 1,
+            "scope": "https://api.github.com/repos/emmett08/observatory-instrumentation",
+            "source": "github.repository",
+            "state": "complete"
+          },
+          "record_type": "collection_coverage"
+        }
+      },
+      "observed_at": "2026-11-01T19:43:21.416931282Z",
+      "source": "github-executions:emmett08/observatory-instrumentation",
+      "raw_sha256": "8b4a8481489462dbc99a9db60607c95f7d2143566ee4869646e2dd16f58aed5d"
+    },
+    {
+      "record": {
+        "id": "coverage:227ee7e55c8b3384c56edddce1a97df6d893e68ce82847e25b7399485bd48c26",
+        "kind": "source_record",
+        "data": {
+          "coverage": {
+            "detail": "Deleted runs and expired artifacts cannot be reconstructed. No receipts do not establish zero executions; runner loss may prevent every upload.",
+            "pages": 0,
+            "records": 0,
+            "scope": "emmett08/observatory-instrumentation",
+            "source": "github.history",
+            "state": "not_collected"
+          },
+          "record_type": "collection_coverage"
+        }
+      },
+      "observed_at": "2026-11-01T19:43:21.416931282Z",
+      "source": "github-executions:emmett08/observatory-instrumentation",
+      "raw_sha256": "8b4a8481489462dbc99a9db60607c95f7d2143566ee4869646e2dd16f58aed5d"
+    },
+    {
+      "record": {
+        "id": "coverage:47edae5eca9ebad0d1f258f0ba109269d51400ac250bafc1a0b006d60415414a",
+        "kind": "source_record",
+        "data": {
+          "coverage": {
+            "detail": null,
+            "pages": 1,
+            "records": 3,
+            "scope": "https://api.github.com/repos/emmett08/observatory-instrumentation/actions/runs/41342977554/attempts/1/jobs?per_page=100",
+            "source": "github.workflow_job",
+            "state": "complete"
+          },
+          "record_type": "collection_coverage"
+        }
+      },
+      "observed_at": "2026-11-01T19:43:21.416931282Z",
+      "source": "github-executions:emmett08/observatory-instrumentation",
+      "raw_sha256": "8b4a8481489462dbc99a9db60607c95f7d2143566ee4869646e2dd16f58aed5d"
+    },
+    {
+      "record": {
+        "id": "coverage:56128b467665a7716b40325c44447b00d580cd932f582abfc67c58ae35928ec3",
+        "kind": "source_record",
+        "data": {
+          "coverage": {
+            "detail": "Validated schema and receipt hashes; known platform fields compared with available API metadata. Unknown provenance and controller declarations remain unverified",
+            "pages": 1,
+            "records": 3,
+            "scope": "run:41342977554/artifact:13098041892",
+            "source": "github.execution_artifact_bundle",
+            "state": "complete"
+          },
+          "record_type": "collection_coverage"
+        }
+      },
+      "observed_at": "2026-11-01T19:43:21.416931282Z",
+      "source": "github-executions:emmett08/observatory-instrumentation",
+      "raw_sha256": "8b4a8481489462dbc99a9db60607c95f7d2143566ee4869646e2dd16f58aed5d"
+    },
+    {
+      "record": {
+        "id": "coverage:93f2071af119a85f8aafe11356cb03a010c40d8e093d90c83e823c75bfa51e0f",
+        "kind": "source_record",
+        "data": {
+          "coverage": {
+            "detail": null,
+            "pages": 1,
+            "records": 2,
+            "scope": "https://api.github.com/repos/emmett08/observatory-instrumentation/actions/runs/41342977554/artifacts?per_page=100",
+            "source": "github.execution_artifact",
+            "state": "complete"
+          },
+          "record_type": "collection_coverage"
+        }
+      },
+      "observed_at": "2026-11-01T19:43:21.416931282Z",
+      "source": "github-executions:emmett08/observatory-instrumentation",
+      "raw_sha256": "8b4a8481489462dbc99a9db60607c95f7d2143566ee4869646e2dd16f58aed5d"
+    },
+    {
+      "record": {
+        "id": "coverage:e910cb57b4a14f2c727ba49c838bbcff92e5bb8c1d2ecab27b3d7234191afabe",
+        "kind": "source_record",
+        "data": {
+          "coverage": {
+            "detail": null,
+            "pages": 1,
+            "records": 1,
+            "scope": "https://api.github.com/repos/emmett08/observatory-instrumentation/actions/runs/41342977554",
+            "source": "github.workflow_run",
+            "state": "complete"
+          },
+          "record_type": "collection_coverage"
+        }
+      },
+      "observed_at": "2026-11-01T19:43:21.416931282Z",
+      "source": "github-executions:emmett08/observatory-instrumentation",
+      "raw_sha256": "8b4a8481489462dbc99a9db60607c95f7d2143566ee4869646e2dd16f58aed5d"
+    },
+    {
+      "record": {
+        "id": "coverage:eb8d716e568a654aeadc9dd610bbee0528ec8297e25c53b7df35e1c34dc82a51",
+        "kind": "source_record",
+        "data": {
+          "coverage": {
+            "detail": null,
+            "pages": 1,
+            "records": 1,
+            "scope": "https://api.github.com/repos/emmett08/observatory-instrumentation/actions/runs/41342977554/attempts/1",
+            "source": "github.workflow_attempt",
+            "state": "complete"
+          },
+          "record_type": "collection_coverage"
+        }
+      },
+      "observed_at": "2026-11-01T19:43:21.416931282Z",
+      "source": "github-executions:emmett08/observatory-instrumentation",
+      "raw_sha256": "8b4a8481489462dbc99a9db60607c95f7d2143566ee4869646e2dd16f58aed5d"
+    },
+    {
+      "record": {
+        "id": "coverage:f5ebb0c4490fbf6c7d8edb953a41b505ac71dceeb81f5e0c8b75de6a1aa4aa45",
+        "kind": "source_record",
+        "data": {
+          "coverage": {
+            "detail": "Validated schema and receipt hashes; known platform fields compared with available API metadata. Unknown provenance and controller declarations remain unverified",
+            "pages": 1,
+            "records": 3,
+            "scope": "run:41342977554/artifact:13098331285",
+            "source": "github.execution_artifact_bundle",
+            "state": "complete"
+          },
+          "record_type": "collection_coverage"
+        }
+      },
+      "observed_at": "2026-11-01T19:43:21.416931282Z",
+      "source": "github-executions:emmett08/observatory-instrumentation",
+      "raw_sha256": "8b4a8481489462dbc99a9db60607c95f7d2143566ee4869646e2dd16f58aed5d"
+    },
+    {
+      "record": {
+        "id": "execution-bundle/be0a5951f97dcd6ee4d6ead022634c07e58e2979bf79c57f1a594a517eefc654",
+        "kind": "source_record",
+        "data": {
+          "payload": {
+            "bundle_sha256": "be0a5951f97dcd6ee4d6ead022634c07e58e2979bf79c57f1a594a517eefc654",
+            "platform": {
+              "actor": "emmett08",
+              "event_name": "pull_request",
+              "job_context_source": "caller",
+              "job_id": null,
+              "job_key": "verify",
+              "job_name": "Instrumentation (ubuntu-latest)",
+              "matrix": {
+                "os": "ubuntu-latest"
+              },
+              "repository": "emmett08/observatory-instrumentation",
+              "repository_id": "1442160414",
+              "run_attempt": 1,
+              "run_id": "41342977554",
+              "source": "runner_environment",
+              "triggering_actor": "emmett08",
+              "workflow_ref": "emmett08/observatory-instrumentation/.github/workflows/ci.yml@refs/pull/2/merge",
+              "workflow_sha": "8d9700826c8c178baa594e7bb47e4423280f63f5"
+            },
+            "receipt_count": 2
+          },
+          "record_type": "execution_bundle",
+          "schema_version": 1,
+          "source": "observatory.execution_bundle"
+        }
+      },
+      "observed_at": "2026-11-01T19:43:21.416931282Z",
+      "source": "github-executions:emmett08/observatory-instrumentation",
+      "raw_sha256": "8b4a8481489462dbc99a9db60607c95f7d2143566ee4869646e2dd16f58aed5d"
+    },
+    {
+      "record": {
+        "id": "execution-bundle/c42f69b02de97e5f11f1252286b260cc8981dc7c69fefe5c285c62c501372703",
+        "kind": "source_record",
+        "data": {
+          "payload": {
+            "bundle_sha256": "c42f69b02de97e5f11f1252286b260cc8981dc7c69fefe5c285c62c501372703",
+            "platform": {
+              "actor": "emmett08",
+              "event_name": "pull_request",
+              "job_context_source": "caller",
+              "job_id": null,
+              "job_key": "verify",
+              "job_name": "Instrumentation (macos-latest)",
+              "matrix": {
+                "os": "macos-latest"
+              },
+              "repository": "emmett08/observatory-instrumentation",
+              "repository_id": "1442160414",
+              "run_attempt": 1,
+              "run_id": "41342977554",
+              "source": "runner_environment",
+              "triggering_actor": "emmett08",
+              "workflow_ref": "emmett08/observatory-instrumentation/.github/workflows/ci.yml@refs/pull/2/merge",
+              "workflow_sha": "8d9700826c8c178baa594e7bb47e4423280f63f5"
+            },
+            "receipt_count": 2
+          },
+          "record_type": "execution_bundle",
+          "schema_version": 1,
+          "source": "observatory.execution_bundle"
+        }
+      },
+      "observed_at": "2026-11-01T19:43:21.416931282Z",
+      "source": "github-executions:emmett08/observatory-instrumentation",
+      "raw_sha256": "8b4a8481489462dbc99a9db60607c95f7d2143566ee4869646e2dd16f58aed5d"
+    },
+    {
+      "record": {
+        "id": "execution/1442160414/41342977554/1/0f2ac9ff-3e72-4735-ac16-249f4db38a39/completion",
+        "kind": "source_record",
+        "data": {
+          "payload": {
+            "artifacts": [
+              {
+                "name": "instrumentation-config",
+                "role": "input",
+                "sha256": "0b1f9d929a49a0529ea3f5985032bb69854f08ea1887408fe9b961e3f1808099",
+                "size_bytes": 338
+              },
+              {
+                "name": "task-resolution",
+                "role": "input",
+                "sha256": "f100d77a63bc1ea5fc2027b3307df87fb39d08bcd0867cb113269ac0756882bc",
+                "size_bytes": 1170
+              }
+            ],
+            "declared": {
+              "controller": "unknown",
+              "controller_provenance": [],
+              "logical_call_id": "integration-tests",
+              "parent_invocation_id": null,
+              "protocol_id": "observatory-instrumentation-demo-v1",
+              "session_id": null,
+              "source": "caller",
+              "task_id": "github-issue-1442160414-1"
+            },
+            "invocation_id": "0f2ac9ff-3e72-4735-ac16-249f4db38a39",
+            "missing_fields": [
+              "declared.controller",
+              "declared.parent_invocation_id",
+              "declared.session_id",
+              "platform.job_id",
+              "result.cached_input_tokens",
+              "result.charge_amount",
+              "result.charge_currency",
+              "result.input_tokens",
+              "result.observed_model",
+              "result.observed_session_id",
+              "result.output_tokens",
+              "result.usage_source",
+              "tool.configuration.configuration_sha256",
+              "tool.configuration.max_output_tokens",
+              "tool.configuration.reasoning_effort",
+              "tool.configuration.seed",
+              "tool.configuration.temperature",
+              "tool.configured_model"
+            ],
+            "phase": "completion",
+            "platform": {
+              "actor": "emmett08",
+              "event_name": "pull_request",
+              "job_context_source": "caller",
+              "job_id": null,
+              "job_key": "verify",
+              "job_name": "Instrumentation (macos-latest)",
+              "matrix": {
+                "os": "macos-latest"
+              },
+              "repository": "emmett08/observatory-instrumentation",
+              "repository_id": "1442160414",
+              "run_attempt": 1,
+              "run_id": "41342977554",
+              "source": "runner_environment",
+              "triggering_actor": "emmett08",
+              "workflow_ref": "emmett08/observatory-instrumentation/.github/workflows/ci.yml@refs/pull/2/merge",
+              "workflow_sha": "8d9700826c8c178baa594e7bb47e4423280f63f5"
+            },
+            "result": {
+              "cached_input_tokens": null,
+              "charge_amount": null,
+              "charge_currency": null,
+              "checks": [
+                {
+                  "name": "integration-tests",
+                  "status": "passed"
+                }
+              ],
+              "exit_code": 0,
+              "input_tokens": null,
+              "observed_model": null,
+              "observed_session_id": null,
+              "output_tokens": null,
+              "runtime_ms": 11383,
+              "status": "success",
+              "usage_source": "unknown"
+            },
+            "schema": "observatory.tool-receipt/1",
+            "timestamp": "2026-11-01T19:41:47.964Z",
+            "tool": {
+              "adapter": "command",
+              "configuration": {
+                "configuration_sha256": null,
+                "max_output_tokens": null,
+                "reasoning_effort": null,
+                "seed": null,
+                "temperature": null
+              },
+              "configured_model": null,
+              "name": "go",
+              "purpose": "development",
+              "version": "go version go1.26.10 darwin/arm64"
+            }
+          },
+          "record_type": "tool_execution_receipt",
+          "schema_version": 1,
+          "source": "observatory.tool_receipt"
+        }
+      },
+      "observed_at": "2026-11-01T19:43:21.416931282Z",
+      "source": "github-executions:emmett08/observatory-instrumentation",
+      "raw_sha256": "8b4a8481489462dbc99a9db60607c95f7d2143566ee4869646e2dd16f58aed5d"
+    },
+    {
+      "record": {
+        "id": "execution/1442160414/41342977554/1/0f2ac9ff-3e72-4735-ac16-249f4db38a39/start",
+        "kind": "source_record",
+        "data": {
+          "payload": {
+            "artifacts": [
+              {
+                "name": "instrumentation-config",
+                "role": "input",
+                "sha256": "0b1f9d929a49a0529ea3f5985032bb69854f08ea1887408fe9b961e3f1808099",
+                "size_bytes": 338
+              },
+              {
+                "name": "task-resolution",
+                "role": "input",
+                "sha256": "f100d77a63bc1ea5fc2027b3307df87fb39d08bcd0867cb113269ac0756882bc",
+                "size_bytes": 1170
+              }
+            ],
+            "declared": {
+              "controller": "unknown",
+              "controller_provenance": [],
+              "logical_call_id": "integration-tests",
+              "parent_invocation_id": null,
+              "protocol_id": "observatory-instrumentation-demo-v1",
+              "session_id": null,
+              "source": "caller",
+              "task_id": "github-issue-1442160414-1"
+            },
+            "invocation_id": "0f2ac9ff-3e72-4735-ac16-249f4db38a39",
+            "missing_fields": [
+              "platform.job_id",
+              "declared.controller",
+              "declared.parent_invocation_id",
+              "declared.session_id",
+              "tool.configured_model",
+              "tool.configuration.configuration_sha256",
+              "tool.configuration.max_output_tokens",
+              "tool.configuration.reasoning_effort",
+              "tool.configuration.seed",
+              "tool.configuration.temperature"
+            ],
+            "phase": "start",
+            "platform": {
+              "actor": "emmett08",
+              "event_name": "pull_request",
+              "job_context_source": "caller",
+              "job_id": null,
+              "job_key": "verify",
+              "job_name": "Instrumentation (macos-latest)",
+              "matrix": {
+                "os": "macos-latest"
+              },
+              "repository": "emmett08/observatory-instrumentation",
+              "repository_id": "1442160414",
+              "run_attempt": 1,
+              "run_id": "41342977554",
+              "source": "runner_environment",
+              "triggering_actor": "emmett08",
+              "workflow_ref": "emmett08/observatory-instrumentation/.github/workflows/ci.yml@refs/pull/2/merge",
+              "workflow_sha": "8d9700826c8c178baa594e7bb47e4423280f63f5"
+            },
+            "result": null,
+            "schema": "observatory.tool-receipt/1",
+            "timestamp": "2026-11-01T19:41:36.572Z",
+            "tool": {
+              "adapter": "command",
+              "configuration": {
+                "configuration_sha256": null,
+                "max_output_tokens": null,
+                "reasoning_effort": null,
+                "seed": null,
+                "temperature": null
+              },
+              "configured_model": null,
+              "name": "go",
+              "purpose": "development",
+              "version": "go version go1.26.10 darwin/arm64"
+            }
+          },
+          "record_type": "tool_execution_receipt",
+          "schema_version": 1,
+          "source": "observatory.tool_receipt"
+        }
+      },
+      "observed_at": "2026-11-01T19:43:21.416931282Z",
+      "source": "github-executions:emmett08/observatory-instrumentation",
+      "raw_sha256": "8b4a8481489462dbc99a9db60607c95f7d2143566ee4869646e2dd16f58aed5d"
+    },
+    {
+      "record": {
+        "id": "execution/1442160414/41342977554/1/ae1acd24-7db0-428f-b046-30c4c30d3846/completion",
+        "kind": "source_record",
+        "data": {
+          "payload": {
+            "artifacts": [
+              {
+                "name": "instrumentation-config",
+                "role": "input",
+                "sha256": "0b1f9d929a49a0529ea3f5985032bb69854f08ea1887408fe9b961e3f1808099",
+                "size_bytes": 338
+              },
+              {
+                "name": "task-resolution",
+                "role": "input",
+                "sha256": "37c35c6922cc3b07523a12e906d915c87797fb13ef7b0c97053d232a22f6f901",
+                "size_bytes": 1173
+              }
+            ],
+            "declared": {
+              "controller": "unknown",
+              "controller_provenance": [],
+              "logical_call_id": "integration-tests",
+              "parent_invocation_id": null,
+              "protocol_id": "observatory-instrumentation-demo-v1",
+              "session_id": null,
+              "source": "caller",
+              "task_id": "github-issue-1442160414-1"
+            },
+            "invocation_id": "ae1acd24-7db0-428f-b046-30c4c30d3846",
+            "missing_fields": [
+              "declared.controller",
+              "declared.parent_invocation_id",
+              "declared.session_id",
+              "platform.job_id",
+              "result.cached_input_tokens",
+              "result.charge_amount",
+              "result.charge_currency",
+              "result.input_tokens",
+              "result.observed_model",
+              "result.observed_session_id",
+              "result.output_tokens",
+              "result.usage_source",
+              "tool.configuration.configuration_sha256",
+              "tool.configuration.max_output_tokens",
+              "tool.configuration.reasoning_effort",
+              "tool.configuration.seed",
+              "tool.configuration.temperature",
+              "tool.configured_model"
+            ],
+            "phase": "completion",
+            "platform": {
+              "actor": "emmett08",
+              "event_name": "pull_request",
+              "job_context_source": "caller",
+              "job_id": null,
+              "job_key": "verify",
+              "job_name": "Instrumentation (ubuntu-latest)",
+              "matrix": {
+                "os": "ubuntu-latest"
+              },
+              "repository": "emmett08/observatory-instrumentation",
+              "repository_id": "1442160414",
+              "run_attempt": 1,
+              "run_id": "41342977554",
+              "source": "runner_environment",
+              "triggering_actor": "emmett08",
+              "workflow_ref": "emmett08/observatory-instrumentation/.github/workflows/ci.yml@refs/pull/2/merge",
+              "workflow_sha": "8d9700826c8c178baa594e7bb47e4423280f63f5"
+            },
+            "result": {
+              "cached_input_tokens": null,
+              "charge_amount": null,
+              "charge_currency": null,
+              "checks": [
+                {
+                  "name": "integration-tests",
+                  "status": "passed"
+                }
+              ],
+              "exit_code": 0,
+              "input_tokens": null,
+              "observed_model": null,
+              "observed_session_id": null,
+              "output_tokens": null,
+              "runtime_ms": 13992,
+              "status": "success",
+              "usage_source": "unknown"
+            },
+            "schema": "observatory.tool-receipt/1",
+            "timestamp": "2026-11-01T19:41:52.315Z",
+            "tool": {
+              "adapter": "command",
+              "configuration": {
+                "configuration_sha256": null,
+                "max_output_tokens": null,
+                "reasoning_effort": null,
+                "seed": null,
+                "temperature": null
+              },
+              "configured_model": null,
+              "name": "go",
+              "purpose": "development",
+              "version": "go version go1.26.10 linux/amd64"
+            }
+          },
+          "record_type": "tool_execution_receipt",
+          "schema_version": 1,
+          "source": "observatory.tool_receipt"
+        }
+      },
+      "observed_at": "2026-11-01T19:43:21.416931282Z",
+      "source": "github-executions:emmett08/observatory-instrumentation",
+      "raw_sha256": "8b4a8481489462dbc99a9db60607c95f7d2143566ee4869646e2dd16f58aed5d"
+    },
+    {
+      "record": {
+        "id": "execution/1442160414/41342977554/1/ae1acd24-7db0-428f-b046-30c4c30d3846/start",
+        "kind": "source_record",
+        "data": {
+          "payload": {
+            "artifacts": [
+              {
+                "name": "instrumentation-config",
+                "role": "input",
+                "sha256": "0b1f9d929a49a0529ea3f5985032bb69854f08ea1887408fe9b961e3f1808099",
+                "size_bytes": 338
+              },
+              {
+                "name": "task-resolution",
+                "role": "input",
+                "sha256": "37c35c6922cc3b07523a12e906d915c87797fb13ef7b0c97053d232a22f6f901",
+                "size_bytes": 1173
+              }
+            ],
+            "declared": {
+              "controller": "unknown",
+              "controller_provenance": [],
+              "logical_call_id": "integration-tests",
+              "parent_invocation_id": null,
+              "protocol_id": "observatory-instrumentation-demo-v1",
+              "session_id": null,
+              "source": "caller",
+              "task_id": "github-issue-1442160414-1"
+            },
+            "invocation_id": "ae1acd24-7db0-428f-b046-30c4c30d3846",
+            "missing_fields": [
+              "platform.job_id",
+              "declared.controller",
+              "declared.parent_invocation_id",
+              "declared.session_id",
+              "tool.configured_model",
+              "tool.configuration.configuration_sha256",
+              "tool.configuration.max_output_tokens",
+              "tool.configuration.reasoning_effort",
+              "tool.configuration.seed",
+              "tool.configuration.temperature"
+            ],
+            "phase": "start",
+            "platform": {
+              "actor": "emmett08",
+              "event_name": "pull_request",
+              "job_context_source": "caller",
+              "job_id": null,
+              "job_key": "verify",
+              "job_name": "Instrumentation (ubuntu-latest)",
+              "matrix": {
+                "os": "ubuntu-latest"
+              },
+              "repository": "emmett08/observatory-instrumentation",
+              "repository_id": "1442160414",
+              "run_attempt": 1,
+              "run_id": "41342977554",
+              "source": "runner_environment",
+              "triggering_actor": "emmett08",
+              "workflow_ref": "emmett08/observatory-instrumentation/.github/workflows/ci.yml@refs/pull/2/merge",
+              "workflow_sha": "8d9700826c8c178baa594e7bb47e4423280f63f5"
+            },
+            "result": null,
+            "schema": "observatory.tool-receipt/1",
+            "timestamp": "2026-11-01T19:41:38.316Z",
+            "tool": {
+              "adapter": "command",
+              "configuration": {
+                "configuration_sha256": null,
+                "max_output_tokens": null,
+                "reasoning_effort": null,
+                "seed": null,
+                "temperature": null
+              },
+              "configured_model": null,
+              "name": "go",
+              "purpose": "development",
+              "version": "go version go1.26.10 linux/amd64"
+            }
+          },
+          "record_type": "tool_execution_receipt",
+          "schema_version": 1,
+          "source": "observatory.tool_receipt"
+        }
+      },
+      "observed_at": "2026-11-01T19:43:21.416931282Z",
+      "source": "github-executions:emmett08/observatory-instrumentation",
+      "raw_sha256": "8b4a8481489462dbc99a9db60607c95f7d2143566ee4869646e2dd16f58aed5d"
+    },
+    {
+      "record": {
+        "id": "github:repository:1442160414/github.execution_artifact/run:41342977554/13098041892/4214ca83004d11a76d06c5f0e2601b9a6cec9a8150cf9362f955ff714d6c5d08",
+        "kind": "source_record",
+        "data": {
+          "content_sha256": "4214ca83004d11a76d06c5f0e2601b9a6cec9a8150cf9362f955ff714d6c5d08",
+          "payload": {
+            "archive_download_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/actions/artifacts/13098041892/zip",
+            "created_at": "2026-11-01T19:41:51Z",
+            "digest": "sha256:a57887185a673e19975d0ed339fcd98c48f36f40532b6adf55a4cc4bae222ca4",
+            "expired": false,
+            "expires_at": "2026-12-01T19:41:49Z",
+            "id": 13098041892,
+            "name": "observatory-executions-c42f69b02de97e5f11f1252286b260cc8981dc7c69fefe5c285c62c501372703-022ce4b0-d827-4798-b0fe-7f8b0c9ae602",
+            "node_id": "MDg6QXJ0aWZhY3QxMzA5ODA0MTg5Mg==",
+            "size_in_bytes": 1473,
+            "updated_at": "2026-11-01T19:41:51Z",
+            "url": "https://api.github.com/repos/emmett08/observatory-instrumentation/actions/artifacts/13098041892",
+            "workflow_run": {
+              "head_branch": "feat/reusable-adoption-kit",
+              "head_repository_id": 1442160414,
+              "head_sha": "5056da34e0ca991081878119c670b88b4e9ac4a0",
+              "id": 41342977554,
+              "repository_id": 1442160414
+            }
+          },
+          "repository": "github:repository:1442160414",
+          "schema_version": 1,
+          "source": "github.execution_artifact",
+          "source_id": "run:41342977554/13098041892"
+        }
+      },
+      "observed_at": "2026-11-01T19:43:21.416931282Z",
+      "source": "github-executions:emmett08/observatory-instrumentation",
+      "raw_sha256": "8b4a8481489462dbc99a9db60607c95f7d2143566ee4869646e2dd16f58aed5d"
+    },
+    {
+      "record": {
+        "id": "github:repository:1442160414/github.execution_artifact/run:41342977554/13098331285/5b4975c45b6210a26168fc649f89122f7fcb0adf586a14fd1078304999cde36d",
+        "kind": "source_record",
+        "data": {
+          "content_sha256": "5b4975c45b6210a26168fc649f89122f7fcb0adf586a14fd1078304999cde36d",
+          "payload": {
+            "archive_download_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/actions/artifacts/13098331285/zip",
+            "created_at": "2026-11-01T19:41:53Z",
+            "digest": "sha256:2c323154b9659f00eb43e1f562263af0b6f539fa7306e81e3b7b636cf470220a",
+            "expired": false,
+            "expires_at": "2026-12-01T19:41:53Z",
+            "id": 13098331285,
+            "name": "observatory-executions-be0a5951f97dcd6ee4d6ead022634c07e58e2979bf79c57f1a594a517eefc654-48cc1def-2bba-475c-bf97-369a3271d717",
+            "node_id": "MDg6QXJ0aWZhY3QxMzA5ODMzMTI4NQ==",
+            "size_in_bytes": 1475,
+            "updated_at": "2026-11-01T19:41:53Z",
+            "url": "https://api.github.com/repos/emmett08/observatory-instrumentation/actions/artifacts/13098331285",
+            "workflow_run": {
+              "head_branch": "feat/reusable-adoption-kit",
+              "head_repository_id": 1442160414,
+              "head_sha": "5056da34e0ca991081878119c670b88b4e9ac4a0",
+              "id": 41342977554,
+              "repository_id": 1442160414
+            }
+          },
+          "repository": "github:repository:1442160414",
+          "schema_version": 1,
+          "source": "github.execution_artifact",
+          "source_id": "run:41342977554/13098331285"
+        }
+      },
+      "observed_at": "2026-11-01T19:43:21.416931282Z",
+      "source": "github-executions:emmett08/observatory-instrumentation",
+      "raw_sha256": "8b4a8481489462dbc99a9db60607c95f7d2143566ee4869646e2dd16f58aed5d"
+    },
+    {
+      "record": {
+        "id": "github:repository:1442160414/github.execution_artifact_delivery/run:41342977554/artifact:13098041892/75cb473ec29c24d8b87943048eccbbaa39dea064a0121af6b1c633a559ea7562",
+        "kind": "source_record",
+        "data": {
+          "content_sha256": "75cb473ec29c24d8b87943048eccbbaa39dea064a0121af6b1c633a559ea7562",
+          "payload": {
+            "artifact_id": 13098041892,
+            "identity_comparison": "Known receipt repository/run/actor fields checked when API metadata was available; unknown fields remain unresolved. Acquisition context does not fill missing receipt provenance.",
+            "record_ids": [
+              "execution-bundle/c42f69b02de97e5f11f1252286b260cc8981dc7c69fefe5c285c62c501372703",
+              "execution/1442160414/41342977554/1/0f2ac9ff-3e72-4735-ac16-249f4db38a39/completion",
+              "execution/1442160414/41342977554/1/0f2ac9ff-3e72-4735-ac16-249f4db38a39/start"
+            ],
+            "repository": "emmett08/observatory-instrumentation",
+            "repository_id": 1442160414,
+            "run_id": 41342977554,
+            "schema": "observatory.execution-artifact-delivery/1",
+            "source": "github_api"
+          },
+          "repository": "github:repository:1442160414",
+          "schema_version": 1,
+          "source": "github.execution_artifact_delivery",
+          "source_id": "run:41342977554/artifact:13098041892"
+        }
+      },
+      "observed_at": "2026-11-01T19:43:21.416931282Z",
+      "source": "github-executions:emmett08/observatory-instrumentation",
+      "raw_sha256": "8b4a8481489462dbc99a9db60607c95f7d2143566ee4869646e2dd16f58aed5d"
+    },
+    {
+      "record": {
+        "id": "github:repository:1442160414/github.execution_artifact_delivery/run:41342977554/artifact:13098331285/54bb75c4e76a6f796a37771a10b52c779b5763ddf517946302c6975029e6b929",
+        "kind": "source_record",
+        "data": {
+          "content_sha256": "54bb75c4e76a6f796a37771a10b52c779b5763ddf517946302c6975029e6b929",
+          "payload": {
+            "artifact_id": 13098331285,
+            "identity_comparison": "Known receipt repository/run/actor fields checked when API metadata was available; unknown fields remain unresolved. Acquisition context does not fill missing receipt provenance.",
+            "record_ids": [
+              "execution-bundle/be0a5951f97dcd6ee4d6ead022634c07e58e2979bf79c57f1a594a517eefc654",
+              "execution/1442160414/41342977554/1/ae1acd24-7db0-428f-b046-30c4c30d3846/completion",
+              "execution/1442160414/41342977554/1/ae1acd24-7db0-428f-b046-30c4c30d3846/start"
+            ],
+            "repository": "emmett08/observatory-instrumentation",
+            "repository_id": 1442160414,
+            "run_id": 41342977554,
+            "schema": "observatory.execution-artifact-delivery/1",
+            "source": "github_api"
+          },
+          "repository": "github:repository:1442160414",
+          "schema_version": 1,
+          "source": "github.execution_artifact_delivery",
+          "source_id": "run:41342977554/artifact:13098331285"
+        }
+      },
+      "observed_at": "2026-11-01T19:43:21.416931282Z",
+      "source": "github-executions:emmett08/observatory-instrumentation",
+      "raw_sha256": "8b4a8481489462dbc99a9db60607c95f7d2143566ee4869646e2dd16f58aed5d"
+    },
+    {
+      "record": {
+        "id": "github:repository:1442160414/github.execution_job_reconciliation/run:41342977554/attempt:1/job:124956729737/baf392349153d78c559666d799cf82b19698b39dfb239e791d1b10f0afdf67f9",
+        "kind": "source_record",
+        "data": {
+          "content_sha256": "baf392349153d78c559666d799cf82b19698b39dfb239e791d1b10f0afdf67f9",
+          "payload": {
+            "conclusion": "success",
+            "job_id": 124956729737,
+            "job_name": "Instrumentation (ubuntu-latest)",
+            "limitations": "No receipts can mean uninstrumented work or a missing upload. Observed receipts do not establish complete tool coverage, human effort, acceptance or retained quality.",
+            "linked_invocations": 1,
+            "receipt_observation": "receipts_observed",
+            "run_attempt": 1,
+            "run_id": 41342977554,
+            "schema": "observatory.execution-job-reconciliation/1",
+            "source": "github_api_comparison",
+            "status": "completed"
+          },
+          "repository": "github:repository:1442160414",
+          "schema_version": 1,
+          "source": "github.execution_job_reconciliation",
+          "source_id": "run:41342977554/attempt:1/job:124956729737"
+        }
+      },
+      "observed_at": "2026-11-01T19:43:21.416931282Z",
+      "source": "github-executions:emmett08/observatory-instrumentation",
+      "raw_sha256": "8b4a8481489462dbc99a9db60607c95f7d2143566ee4869646e2dd16f58aed5d"
+    },
+    {
+      "record": {
+        "id": "github:repository:1442160414/github.execution_job_reconciliation/run:41342977554/attempt:1/job:124956729999/eeaf4c6e3860036c1aa1ceb9153746a2e3bae03492455be01bded1262edf6986",
+        "kind": "source_record",
+        "data": {
+          "content_sha256": "eeaf4c6e3860036c1aa1ceb9153746a2e3bae03492455be01bded1262edf6986",
+          "payload": {
+            "conclusion": "success",
+            "job_id": 124956729999,
+            "job_name": "Instrumentation (macos-latest)",
+            "limitations": "No receipts can mean uninstrumented work or a missing upload. Observed receipts do not establish complete tool coverage, human effort, acceptance or retained quality.",
+            "linked_invocations": 1,
+            "receipt_observation": "receipts_observed",
+            "run_attempt": 1,
+            "run_id": 41342977554,
+            "schema": "observatory.execution-job-reconciliation/1",
+            "source": "github_api_comparison",
+            "status": "completed"
+          },
+          "repository": "github:repository:1442160414",
+          "schema_version": 1,
+          "source": "github.execution_job_reconciliation",
+          "source_id": "run:41342977554/attempt:1/job:124956729999"
+        }
+      },
+      "observed_at": "2026-11-01T19:43:21.416931282Z",
+      "source": "github-executions:emmett08/observatory-instrumentation",
+      "raw_sha256": "8b4a8481489462dbc99a9db60607c95f7d2143566ee4869646e2dd16f58aed5d"
+    },
+    {
+      "record": {
+        "id": "github:repository:1442160414/github.execution_job_reconciliation/run:41342977554/attempt:1/job:124956912738/5316ff71dc62462612d209c586014a01d50b88e9954e5088e360e9b5e0ab316d",
+        "kind": "source_record",
+        "data": {
+          "content_sha256": "5316ff71dc62462612d209c586014a01d50b88e9954e5088e360e9b5e0ab316d",
+          "payload": {
+            "conclusion": null,
+            "job_id": 124956912738,
+            "job_name": "Verify discovery and receipt collection",
+            "limitations": "No receipts can mean uninstrumented work or a missing upload. Observed receipts do not establish complete tool coverage, human effort, acceptance or retained quality.",
+            "linked_invocations": 0,
+            "receipt_observation": "no_receipts_observed",
+            "run_attempt": 1,
+            "run_id": 41342977554,
+            "schema": "observatory.execution-job-reconciliation/1",
+            "source": "github_api_comparison",
+            "status": "in_progress"
+          },
+          "repository": "github:repository:1442160414",
+          "schema_version": 1,
+          "source": "github.execution_job_reconciliation",
+          "source_id": "run:41342977554/attempt:1/job:124956912738"
+        }
+      },
+      "observed_at": "2026-11-01T19:43:21.416931282Z",
+      "source": "github-executions:emmett08/observatory-instrumentation",
+      "raw_sha256": "8b4a8481489462dbc99a9db60607c95f7d2143566ee4869646e2dd16f58aed5d"
+    },
+    {
+      "record": {
+        "id": "github:repository:1442160414/github.execution_reconciliation/run:41342977554/invocation:execution/1442160414/41342977554/1/0f2ac9ff-3e72-4735-ac16-249f4db38a39/1a520b429cc3196e1c1980d199128a8f5d4d96533a0831a366619570a7b270e1",
+        "kind": "source_record",
+        "data": {
+          "content_sha256": "1a520b429cc3196e1c1980d199128a8f5d4d96533a0831a366619570a7b270e1",
+          "payload": {
+            "invocation_id": "0f2ac9ff-3e72-4735-ac16-249f4db38a39",
+            "job_conclusion": "success",
+            "job_id": 124956729999,
+            "job_link": "unambiguous",
+            "job_status": "completed",
+            "lifecycle": "start_and_completion_observed",
+            "limitations": "Schema and hash validation do not authenticate caller declarations. Missing phases do not establish tool outcome.",
+            "receipt_ids": [
+              "execution/1442160414/41342977554/1/0f2ac9ff-3e72-4735-ac16-249f4db38a39/completion",
+              "execution/1442160414/41342977554/1/0f2ac9ff-3e72-4735-ac16-249f4db38a39/start"
+            ],
+            "run_attempt": 1,
+            "run_id": 41342977554,
+            "schema": "observatory.execution-reconciliation/1",
+            "source": "github_api_comparison"
+          },
+          "repository": "github:repository:1442160414",
+          "schema_version": 1,
+          "source": "github.execution_reconciliation",
+          "source_id": "run:41342977554/invocation:execution/1442160414/41342977554/1/0f2ac9ff-3e72-4735-ac16-249f4db38a39"
+        }
+      },
+      "observed_at": "2026-11-01T19:43:21.416931282Z",
+      "source": "github-executions:emmett08/observatory-instrumentation",
+      "raw_sha256": "8b4a8481489462dbc99a9db60607c95f7d2143566ee4869646e2dd16f58aed5d"
+    },
+    {
+      "record": {
+        "id": "github:repository:1442160414/github.execution_reconciliation/run:41342977554/invocation:execution/1442160414/41342977554/1/ae1acd24-7db0-428f-b046-30c4c30d3846/70343aacf1d2895965a8ede047f8019e63e3d47b333dc3ac0fd44515285129be",
+        "kind": "source_record",
+        "data": {
+          "content_sha256": "70343aacf1d2895965a8ede047f8019e63e3d47b333dc3ac0fd44515285129be",
+          "payload": {
+            "invocation_id": "ae1acd24-7db0-428f-b046-30c4c30d3846",
+            "job_conclusion": "success",
+            "job_id": 124956729737,
+            "job_link": "unambiguous",
+            "job_status": "completed",
+            "lifecycle": "start_and_completion_observed",
+            "limitations": "Schema and hash validation do not authenticate caller declarations. Missing phases do not establish tool outcome.",
+            "receipt_ids": [
+              "execution/1442160414/41342977554/1/ae1acd24-7db0-428f-b046-30c4c30d3846/completion",
+              "execution/1442160414/41342977554/1/ae1acd24-7db0-428f-b046-30c4c30d3846/start"
+            ],
+            "run_attempt": 1,
+            "run_id": 41342977554,
+            "schema": "observatory.execution-reconciliation/1",
+            "source": "github_api_comparison"
+          },
+          "repository": "github:repository:1442160414",
+          "schema_version": 1,
+          "source": "github.execution_reconciliation",
+          "source_id": "run:41342977554/invocation:execution/1442160414/41342977554/1/ae1acd24-7db0-428f-b046-30c4c30d3846"
+        }
+      },
+      "observed_at": "2026-11-01T19:43:21.416931282Z",
+      "source": "github-executions:emmett08/observatory-instrumentation",
+      "raw_sha256": "8b4a8481489462dbc99a9db60607c95f7d2143566ee4869646e2dd16f58aed5d"
+    },
+    {
+      "record": {
+        "id": "github:repository:1442160414/github.repository/repository/9eb9345fe87b79d08fa8c50e579897eacec93723a54debebffcaa544049a50cb",
+        "kind": "source_record",
+        "data": {
+          "content_sha256": "9eb9345fe87b79d08fa8c50e579897eacec93723a54debebffcaa544049a50cb",
+          "payload": {
+            "allow_forking": true,
+            "archive_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/{archive_format}{/ref}",
+            "archived": false,
+            "assignees_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/assignees{/user}",
+            "blobs_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/git/blobs{/sha}",
+            "branches_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/branches{/branch}",
+            "clone_url": "https://github.com/emmett08/observatory-instrumentation.git",
+            "collaborators_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/collaborators{/collaborator}",
+            "comments_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/comments{/number}",
+            "commits_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/commits{/sha}",
+            "compare_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/compare/{base}...{head}",
+            "contents_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/contents/{+path}",
+            "contributors_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/contributors",
+            "created_at": "2026-11-01T19:26:09Z",
+            "default_branch": "main",
+            "deployments_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/deployments",
+            "description": null,
+            "disabled": false,
+            "downloads_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/downloads",
+            "events_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/events",
+            "fork": false,
+            "forks": 0,
+            "forks_count": 0,
+            "forks_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/forks",
+            "full_name": "emmett08/observatory-instrumentation",
+            "git_commits_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/git/commits{/sha}",
+            "git_refs_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/git/refs{/sha}",
+            "git_tags_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/git/tags{/sha}",
+            "git_url": "git://github.com/emmett08/observatory-instrumentation.git",
+            "has_discussions": false,
+            "has_downloads": false,
+            "has_issues": true,
+            "has_pages": false,
+            "has_projects": true,
+            "has_pull_requests": true,
+            "has_wiki": true,
+            "homepage": null,
+            "hooks_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/hooks",
+            "html_url": "https://github.com/emmett08/observatory-instrumentation",
+            "id": 1442160414,
+            "is_template": false,
+            "issue_comment_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/issues/comments{/number}",
+            "issue_events_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/issues/events{/number}",
+            "issues_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/issues{/number}",
+            "keys_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/keys{/key_id}",
+            "labels_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/labels{/name}",
+            "language": null,
+            "languages_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/languages",
+            "license": {
+              "key": "gpl-3.0",
+              "name": "GNU General Public License v3.0",
+              "node_id": "MDc6TGljZW5zZTk=",
+              "spdx_id": "GPL-3.0",
+              "url": "https://api.github.com/licenses/gpl-3.0"
+            },
+            "merges_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/merges",
+            "milestones_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/milestones{/number}",
+            "mirror_url": null,
+            "name": "observatory-instrumentation",
+            "network_count": 0,
+            "node_id": "R_kgDOVfWfHg",
+            "notifications_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/notifications{?since,all,participating}",
+            "open_issues": 2,
+            "open_issues_count": 2,
+            "owner": {
+              "avatar_url": "https://avatars.githubusercontent.com/u/85883829?v=4",
+              "events_url": "https://api.github.com/users/emmett08/events{/privacy}",
+              "followers_url": "https://api.github.com/users/emmett08/followers",
+              "following_url": "https://api.github.com/users/emmett08/following{/other_user}",
+              "gists_url": "https://api.github.com/users/emmett08/gists{/gist_id}",
+              "gravatar_id": "",
+              "html_url": "https://github.com/emmett08",
+              "id": 85883829,
+              "login": "emmett08",
+              "node_id": "MDQ6VXNlcjg1ODgzODI5",
+              "organizations_url": "https://api.github.com/users/emmett08/orgs",
+              "received_events_url": "https://api.github.com/users/emmett08/received_events",
+              "repos_url": "https://api.github.com/users/emmett08/repos",
+              "site_admin": false,
+              "starred_url": "https://api.github.com/users/emmett08/starred{/owner}{/repo}",
+              "subscriptions_url": "https://api.github.com/users/emmett08/subscriptions",
+              "type": "User",
+              "url": "https://api.github.com/users/emmett08",
+              "user_view_type": "public"
+            },
+            "permissions": {
+              "admin": false,
+              "maintain": false,
+              "pull": false,
+              "push": false,
+              "triage": false
+            },
+            "private": false,
+            "pull_request_creation_policy": "all",
+            "pulls_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/pulls{/number}",
+            "pushed_at": "2026-11-01T19:40:52Z",
+            "releases_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/releases{/id}",
+            "size": 0,
+            "ssh_url": "git@github.com:emmett08/observatory-instrumentation.git",
+            "stargazers_count": 0,
+            "stargazers_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/stargazers",
+            "statuses_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/statuses/{sha}",
+            "subscribers_count": 0,
+            "subscribers_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/subscribers",
+            "subscription_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/subscription",
+            "svn_url": "https://github.com/emmett08/observatory-instrumentation",
+            "tags_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/tags",
+            "teams_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/teams",
+            "temp_clone_token": "",
+            "topics": [],
+            "trees_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/git/trees{/sha}",
+            "updated_at": "2026-11-01T19:26:14Z",
+            "url": "https://api.github.com/repos/emmett08/observatory-instrumentation",
+            "visibility": "public",
+            "watchers": 0,
+            "watchers_count": 0,
+            "web_commit_signoff_required": false
+          },
+          "repository": "github:repository:1442160414",
+          "schema_version": 1,
+          "source": "github.repository",
+          "source_id": "repository"
+        }
+      },
+      "observed_at": "2026-11-01T19:43:21.416931282Z",
+      "source": "github-executions:emmett08/observatory-instrumentation",
+      "raw_sha256": "8b4a8481489462dbc99a9db60607c95f7d2143566ee4869646e2dd16f58aed5d"
+    },
+    {
+      "record": {
+        "id": "github:repository:1442160414/github.workflow_attempt/run:41342977554/attempt:1//09d99337bcfbeb51a6e9fb76251e74f3753a8c09ca687a97774cfb58c0e6b9cc",
+        "kind": "source_record",
+        "data": {
+          "content_sha256": "09d99337bcfbeb51a6e9fb76251e74f3753a8c09ca687a97774cfb58c0e6b9cc",
+          "payload": {
+            "actor": {
+              "avatar_url": "https://avatars.githubusercontent.com/u/85883829?v=4",
+              "events_url": "https://api.github.com/users/emmett08/events{/privacy}",
+              "followers_url": "https://api.github.com/users/emmett08/followers",
+              "following_url": "https://api.github.com/users/emmett08/following{/other_user}",
+              "gists_url": "https://api.github.com/users/emmett08/gists{/gist_id}",
+              "gravatar_id": "",
+              "html_url": "https://github.com/emmett08",
+              "id": 85883829,
+              "login": "emmett08",
+              "node_id": "MDQ6VXNlcjg1ODgzODI5",
+              "organizations_url": "https://api.github.com/users/emmett08/orgs",
+              "received_events_url": "https://api.github.com/users/emmett08/received_events",
+              "repos_url": "https://api.github.com/users/emmett08/repos",
+              "site_admin": false,
+              "starred_url": "https://api.github.com/users/emmett08/starred{/owner}{/repo}",
+              "subscriptions_url": "https://api.github.com/users/emmett08/subscriptions",
+              "type": "User",
+              "url": "https://api.github.com/users/emmett08",
+              "user_view_type": "public"
+            },
+            "artifacts_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/actions/runs/41342977554/artifacts",
+            "cancel_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/actions/runs/41342977554/cancel",
+            "check_suite_id": 112046848773,
+            "check_suite_node_id": "CS_kwDOVfWfHs8AAAAaFoM7BQ",
+            "check_suite_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/check-suites/112046848773",
+            "conclusion": null,
+            "created_at": "2026-11-01T19:41:11Z",
+            "display_title": "Add reusable action, Go installer and automatic evidence discovery",
+            "event": "pull_request",
+            "head_branch": "feat/reusable-adoption-kit",
+            "head_commit": {
+              "author": {
+                "email": "emmett.miller7@outlook.com",
+                "name": "Emmett Miller"
+              },
+              "committer": {
+                "email": "emmett.miller7@outlook.com",
+                "name": "Emmett Miller"
+              },
+              "id": "5056da34e0ca991081878119c670b88b4e9ac4a0",
+              "message": "Pin adoption instructions to the initial implementation",
+              "timestamp": "2026-11-01T19:40:51Z",
+              "tree_id": "c90c8aaa55b58ab295a5e6469b1a0de61d8ff08b"
+            },
+            "head_repository": {
+              "archive_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/{archive_format}{/ref}",
+              "assignees_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/assignees{/user}",
+              "blobs_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/git/blobs{/sha}",
+              "branches_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/branches{/branch}",
+              "collaborators_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/collaborators{/collaborator}",
+              "comments_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/comments{/number}",
+              "commits_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/commits{/sha}",
+              "compare_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/compare/{base}...{head}",
+              "contents_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/contents/{+path}",
+              "contributors_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/contributors",
+              "deployments_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/deployments",
+              "description": null,
+              "downloads_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/downloads",
+              "events_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/events",
+              "fork": false,
+              "forks_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/forks",
+              "full_name": "emmett08/observatory-instrumentation",
+              "git_commits_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/git/commits{/sha}",
+              "git_refs_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/git/refs{/sha}",
+              "git_tags_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/git/tags{/sha}",
+              "hooks_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/hooks",
+              "html_url": "https://github.com/emmett08/observatory-instrumentation",
+              "id": 1442160414,
+              "issue_comment_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/issues/comments{/number}",
+              "issue_events_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/issues/events{/number}",
+              "issues_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/issues{/number}",
+              "keys_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/keys{/key_id}",
+              "labels_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/labels{/name}",
+              "languages_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/languages",
+              "merges_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/merges",
+              "milestones_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/milestones{/number}",
+              "name": "observatory-instrumentation",
+              "node_id": "R_kgDOVfWfHg",
+              "notifications_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/notifications{?since,all,participating}",
+              "owner": {
+                "avatar_url": "https://avatars.githubusercontent.com/u/85883829?v=4",
+                "events_url": "https://api.github.com/users/emmett08/events{/privacy}",
+                "followers_url": "https://api.github.com/users/emmett08/followers",
+                "following_url": "https://api.github.com/users/emmett08/following{/other_user}",
+                "gists_url": "https://api.github.com/users/emmett08/gists{/gist_id}",
+                "gravatar_id": "",
+                "html_url": "https://github.com/emmett08",
+                "id": 85883829,
+                "login": "emmett08",
+                "node_id": "MDQ6VXNlcjg1ODgzODI5",
+                "organizations_url": "https://api.github.com/users/emmett08/orgs",
+                "received_events_url": "https://api.github.com/users/emmett08/received_events",
+                "repos_url": "https://api.github.com/users/emmett08/repos",
+                "site_admin": false,
+                "starred_url": "https://api.github.com/users/emmett08/starred{/owner}{/repo}",
+                "subscriptions_url": "https://api.github.com/users/emmett08/subscriptions",
+                "type": "User",
+                "url": "https://api.github.com/users/emmett08",
+                "user_view_type": "public"
+              },
+              "private": false,
+              "pulls_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/pulls{/number}",
+              "releases_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/releases{/id}",
+              "stargazers_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/stargazers",
+              "statuses_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/statuses/{sha}",
+              "subscribers_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/subscribers",
+              "subscription_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/subscription",
+              "tags_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/tags",
+              "teams_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/teams",
+              "trees_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/git/trees{/sha}",
+              "url": "https://api.github.com/repos/emmett08/observatory-instrumentation"
+            },
+            "head_sha": "5056da34e0ca991081878119c670b88b4e9ac4a0",
+            "html_url": "https://github.com/emmett08/observatory-instrumentation/actions/runs/41342977554",
+            "id": 41342977554,
+            "jobs_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/actions/runs/41342977554/attempts/1/jobs",
+            "logs_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/actions/runs/41342977554/attempts/1/logs",
+            "name": "Verify reusable instrumentation",
+            "node_id": "WFR_kwLOVfWfHs8AAAAJoDvGEg",
+            "path": ".github/workflows/ci.yml",
+            "previous_attempt_url": null,
+            "pull_requests": [
+              {
+                "base": {
+                  "ref": "main",
+                  "repo": {
+                    "id": 1442160414,
+                    "name": "observatory-instrumentation",
+                    "url": "https://api.github.com/repos/emmett08/observatory-instrumentation"
+                  },
+                  "sha": "bcaa9d02eebfd0052752a2618c63b5589bb3bdab"
+                },
+                "head": {
+                  "ref": "feat/reusable-adoption-kit",
+                  "repo": {
+                    "id": 1442160414,
+                    "name": "observatory-instrumentation",
+                    "url": "https://api.github.com/repos/emmett08/observatory-instrumentation"
+                  },
+                  "sha": "5056da34e0ca991081878119c670b88b4e9ac4a0"
+                },
+                "id": 5110866243,
+                "number": 2,
+                "url": "https://api.github.com/repos/emmett08/observatory-instrumentation/pulls/2"
+              }
+            ],
+            "referenced_workflows": [],
+            "repository": {
+              "archive_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/{archive_format}{/ref}",
+              "assignees_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/assignees{/user}",
+              "blobs_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/git/blobs{/sha}",
+              "branches_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/branches{/branch}",
+              "collaborators_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/collaborators{/collaborator}",
+              "comments_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/comments{/number}",
+              "commits_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/commits{/sha}",
+              "compare_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/compare/{base}...{head}",
+              "contents_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/contents/{+path}",
+              "contributors_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/contributors",
+              "deployments_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/deployments",
+              "description": null,
+              "downloads_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/downloads",
+              "events_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/events",
+              "fork": false,
+              "forks_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/forks",
+              "full_name": "emmett08/observatory-instrumentation",
+              "git_commits_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/git/commits{/sha}",
+              "git_refs_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/git/refs{/sha}",
+              "git_tags_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/git/tags{/sha}",
+              "hooks_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/hooks",
+              "html_url": "https://github.com/emmett08/observatory-instrumentation",
+              "id": 1442160414,
+              "issue_comment_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/issues/comments{/number}",
+              "issue_events_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/issues/events{/number}",
+              "issues_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/issues{/number}",
+              "keys_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/keys{/key_id}",
+              "labels_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/labels{/name}",
+              "languages_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/languages",
+              "merges_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/merges",
+              "milestones_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/milestones{/number}",
+              "name": "observatory-instrumentation",
+              "node_id": "R_kgDOVfWfHg",
+              "notifications_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/notifications{?since,all,participating}",
+              "owner": {
+                "avatar_url": "https://avatars.githubusercontent.com/u/85883829?v=4",
+                "events_url": "https://api.github.com/users/emmett08/events{/privacy}",
+                "followers_url": "https://api.github.com/users/emmett08/followers",
+                "following_url": "https://api.github.com/users/emmett08/following{/other_user}",
+                "gists_url": "https://api.github.com/users/emmett08/gists{/gist_id}",
+                "gravatar_id": "",
+                "html_url": "https://github.com/emmett08",
+                "id": 85883829,
+                "login": "emmett08",
+                "node_id": "MDQ6VXNlcjg1ODgzODI5",
+                "organizations_url": "https://api.github.com/users/emmett08/orgs",
+                "received_events_url": "https://api.github.com/users/emmett08/received_events",
+                "repos_url": "https://api.github.com/users/emmett08/repos",
+                "site_admin": false,
+                "starred_url": "https://api.github.com/users/emmett08/starred{/owner}{/repo}",
+                "subscriptions_url": "https://api.github.com/users/emmett08/subscriptions",
+                "type": "User",
+                "url": "https://api.github.com/users/emmett08",
+                "user_view_type": "public"
+              },
+              "private": false,
+              "pulls_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/pulls{/number}",
+              "releases_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/releases{/id}",
+              "stargazers_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/stargazers",
+              "statuses_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/statuses/{sha}",
+              "subscribers_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/subscribers",
+              "subscription_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/subscription",
+              "tags_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/tags",
+              "teams_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/teams",
+              "trees_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/git/trees{/sha}",
+              "url": "https://api.github.com/repos/emmett08/observatory-instrumentation"
+            },
+            "rerun_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/actions/runs/41342977554/rerun",
+            "run_attempt": 1,
+            "run_number": 1,
+            "run_started_at": "2026-11-01T19:41:11Z",
+            "status": "in_progress",
+            "triggering_actor": {
+              "avatar_url": "https://avatars.githubusercontent.com/u/85883829?v=4",
+              "events_url": "https://api.github.com/users/emmett08/events{/privacy}",
+              "followers_url": "https://api.github.com/users/emmett08/followers",
+              "following_url": "https://api.github.com/users/emmett08/following{/other_user}",
+              "gists_url": "https://api.github.com/users/emmett08/gists{/gist_id}",
+              "gravatar_id": "",
+              "html_url": "https://github.com/emmett08",
+              "id": 85883829,
+              "login": "emmett08",
+              "node_id": "MDQ6VXNlcjg1ODgzODI5",
+              "organizations_url": "https://api.github.com/users/emmett08/orgs",
+              "received_events_url": "https://api.github.com/users/emmett08/received_events",
+              "repos_url": "https://api.github.com/users/emmett08/repos",
+              "site_admin": false,
+              "starred_url": "https://api.github.com/users/emmett08/starred{/owner}{/repo}",
+              "subscriptions_url": "https://api.github.com/users/emmett08/subscriptions",
+              "type": "User",
+              "url": "https://api.github.com/users/emmett08",
+              "user_view_type": "public"
+            },
+            "updated_at": "2026-11-01T19:41:57Z",
+            "url": "https://api.github.com/repos/emmett08/observatory-instrumentation/actions/runs/41342977554",
+            "workflow_id": 403828776,
+            "workflow_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/actions/workflows/403828776"
+          },
+          "repository": "github:repository:1442160414",
+          "schema_version": 1,
+          "source": "github.workflow_attempt",
+          "source_id": "run:41342977554/attempt:1/"
+        }
+      },
+      "observed_at": "2026-11-01T19:43:21.416931282Z",
+      "source": "github-executions:emmett08/observatory-instrumentation",
+      "raw_sha256": "8b4a8481489462dbc99a9db60607c95f7d2143566ee4869646e2dd16f58aed5d"
+    },
+    {
+      "record": {
+        "id": "github:repository:1442160414/github.workflow_job/run:41342977554/attempt:1/124956729737/546cc284ac0809eecc130b88e83a4b506b9ea74a92c3fe1f23e6abdc74001b8a",
+        "kind": "source_record",
+        "data": {
+          "content_sha256": "546cc284ac0809eecc130b88e83a4b506b9ea74a92c3fe1f23e6abdc74001b8a",
+          "payload": {
+            "check_run_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/check-runs/124956729737",
+            "completed_at": "2026-11-01T19:41:55Z",
+            "conclusion": "success",
+            "created_at": "2026-11-01T19:41:12Z",
+            "head_branch": "feat/reusable-adoption-kit",
+            "head_sha": "5056da34e0ca991081878119c670b88b4e9ac4a0",
+            "html_url": "https://github.com/emmett08/observatory-instrumentation/actions/runs/41342977554/job/124956729737",
+            "id": 124956729737,
+            "labels": [
+              "ubuntu-latest"
+            ],
+            "name": "Instrumentation (ubuntu-latest)",
+            "node_id": "CR_kwDOVfWfHs8AAAAdGABhiQ",
+            "run_attempt": 1,
+            "run_id": 41342977554,
+            "run_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/actions/runs/41342977554",
+            "runner_group_id": 0,
+            "runner_group_name": "GitHub Actions",
+            "runner_id": 1000023303,
+            "runner_name": "GitHub Actions 1000023303",
+            "started_at": "2026-11-01T19:41:13Z",
+            "status": "completed",
+            "steps": [
+              {
+                "completed_at": "2026-11-01T19:41:15Z",
+                "conclusion": "success",
+                "name": "Set up job",
+                "number": 1,
+                "started_at": "2026-11-01T19:41:14Z",
+                "status": "completed"
+              },
+              {
+                "completed_at": "2026-11-01T19:41:16Z",
+                "conclusion": "success",
+                "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+                "number": 2,
+                "started_at": "2026-11-01T19:41:15Z",
+                "status": "completed"
+              },
+              {
+                "completed_at": "2026-11-01T19:41:29Z",
+                "conclusion": "success",
+                "name": "Configure the action under test",
+                "number": 3,
+                "started_at": "2026-11-01T19:41:16Z",
+                "status": "completed"
+              },
+              {
+                "completed_at": "2026-11-01T19:41:38Z",
+                "conclusion": "success",
+                "name": "Check formatting and static analysis",
+                "number": 4,
+                "started_at": "2026-11-01T19:41:29Z",
+                "status": "completed"
+              },
+              {
+                "completed_at": "2026-11-01T19:41:52Z",
+                "conclusion": "success",
+                "name": "Test with an explicit receipt",
+                "number": 5,
+                "started_at": "2026-11-01T19:41:38Z",
+                "status": "completed"
+              },
+              {
+                "completed_at": "2026-11-01T19:41:52Z",
+                "conclusion": "success",
+                "name": "Test private collection orchestration",
+                "number": 6,
+                "started_at": "2026-11-01T19:41:52Z",
+                "status": "completed"
+              },
+              {
+                "completed_at": "2026-11-01T19:41:53Z",
+                "conclusion": "success",
+                "name": "Publish this job's receipts",
+                "number": 7,
+                "started_at": "2026-11-01T19:41:52Z",
+                "status": "completed"
+              },
+              {
+                "completed_at": "2026-11-01T19:41:53Z",
+                "conclusion": "success",
+                "name": "Post Publish this job's receipts",
+                "number": 12,
+                "started_at": "2026-11-01T19:41:53Z",
+                "status": "completed"
+              },
+              {
+                "completed_at": "2026-11-01T19:41:53Z",
+                "conclusion": "success",
+                "name": "Post Configure the action under test",
+                "number": 13,
+                "started_at": "2026-11-01T19:41:53Z",
+                "status": "completed"
+              },
+              {
+                "completed_at": "2026-11-01T19:41:54Z",
+                "conclusion": "success",
+                "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+                "number": 14,
+                "started_at": "2026-11-01T19:41:53Z",
+                "status": "completed"
+              },
+              {
+                "completed_at": "2026-11-01T19:41:54Z",
+                "conclusion": "success",
+                "name": "Complete job",
+                "number": 15,
+                "started_at": "2026-11-01T19:41:54Z",
+                "status": "completed"
+              }
+            ],
+            "url": "https://api.github.com/repos/emmett08/observatory-instrumentation/actions/jobs/124956729737",
+            "workflow_name": "Verify reusable instrumentation"
+          },
+          "repository": "github:repository:1442160414",
+          "schema_version": 1,
+          "source": "github.workflow_job",
+          "source_id": "run:41342977554/attempt:1/124956729737"
+        }
+      },
+      "observed_at": "2026-11-01T19:43:21.416931282Z",
+      "source": "github-executions:emmett08/observatory-instrumentation",
+      "raw_sha256": "8b4a8481489462dbc99a9db60607c95f7d2143566ee4869646e2dd16f58aed5d"
+    },
+    {
+      "record": {
+        "id": "github:repository:1442160414/github.workflow_job/run:41342977554/attempt:1/124956729999/b720ea2305c7ff3ae732563f3911b10761785ce35e5dbf016bd3dd786b8c1303",
+        "kind": "source_record",
+        "data": {
+          "content_sha256": "b720ea2305c7ff3ae732563f3911b10761785ce35e5dbf016bd3dd786b8c1303",
+          "payload": {
+            "check_run_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/check-runs/124956729999",
+            "completed_at": "2026-11-01T19:41:54Z",
+            "conclusion": "success",
+            "created_at": "2026-11-01T19:41:12Z",
+            "head_branch": "feat/reusable-adoption-kit",
+            "head_sha": "5056da34e0ca991081878119c670b88b4e9ac4a0",
+            "html_url": "https://github.com/emmett08/observatory-instrumentation/actions/runs/41342977554/job/124956729999",
+            "id": 124956729999,
+            "labels": [
+              "macos-latest"
+            ],
+            "name": "Instrumentation (macos-latest)",
+            "node_id": "CR_kwDOVfWfHs8AAAAdGABijw",
+            "run_attempt": 1,
+            "run_id": 41342977554,
+            "run_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/actions/runs/41342977554",
+            "runner_group_id": 0,
+            "runner_group_name": "GitHub Actions",
+            "runner_id": 1000023304,
+            "runner_name": "GitHub Actions 1000023304",
+            "started_at": "2026-11-01T19:41:14Z",
+            "status": "completed",
+            "steps": [
+              {
+                "completed_at": "2026-11-01T19:41:15Z",
+                "conclusion": "success",
+                "name": "Set up job",
+                "number": 1,
+                "started_at": "2026-11-01T19:41:14Z",
+                "status": "completed"
+              },
+              {
+                "completed_at": "2026-11-01T19:41:18Z",
+                "conclusion": "success",
+                "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+                "number": 2,
+                "started_at": "2026-11-01T19:41:15Z",
+                "status": "completed"
+              },
+              {
+                "completed_at": "2026-11-01T19:41:30Z",
+                "conclusion": "success",
+                "name": "Configure the action under test",
+                "number": 3,
+                "started_at": "2026-11-01T19:41:18Z",
+                "status": "completed"
+              },
+              {
+                "completed_at": "2026-11-01T19:41:36Z",
+                "conclusion": "success",
+                "name": "Check formatting and static analysis",
+                "number": 4,
+                "started_at": "2026-11-01T19:41:30Z",
+                "status": "completed"
+              },
+              {
+                "completed_at": "2026-11-01T19:41:47Z",
+                "conclusion": "success",
+                "name": "Test with an explicit receipt",
+                "number": 5,
+                "started_at": "2026-11-01T19:41:36Z",
+                "status": "completed"
+              },
+              {
+                "completed_at": "2026-11-01T19:41:48Z",
+                "conclusion": "success",
+                "name": "Test private collection orchestration",
+                "number": 6,
+                "started_at": "2026-11-01T19:41:47Z",
+                "status": "completed"
+              },
+              {
+                "completed_at": "2026-11-01T19:41:50Z",
+                "conclusion": "success",
+                "name": "Publish this job's receipts",
+                "number": 7,
+                "started_at": "2026-11-01T19:41:48Z",
+                "status": "completed"
+              },
+              {
+                "completed_at": "2026-11-01T19:41:50Z",
+                "conclusion": "success",
+                "name": "Post Publish this job's receipts",
+                "number": 12,
+                "started_at": "2026-11-01T19:41:50Z",
+                "status": "completed"
+              },
+              {
+                "completed_at": "2026-11-01T19:41:51Z",
+                "conclusion": "success",
+                "name": "Post Configure the action under test",
+                "number": 13,
+                "started_at": "2026-11-01T19:41:50Z",
+                "status": "completed"
+              },
+              {
+                "completed_at": "2026-11-01T19:41:52Z",
+                "conclusion": "success",
+                "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+                "number": 14,
+                "started_at": "2026-11-01T19:41:51Z",
+                "status": "completed"
+              },
+              {
+                "completed_at": "2026-11-01T19:41:52Z",
+                "conclusion": "success",
+                "name": "Complete job",
+                "number": 15,
+                "started_at": "2026-11-01T19:41:52Z",
+                "status": "completed"
+              }
+            ],
+            "url": "https://api.github.com/repos/emmett08/observatory-instrumentation/actions/jobs/124956729999",
+            "workflow_name": "Verify reusable instrumentation"
+          },
+          "repository": "github:repository:1442160414",
+          "schema_version": 1,
+          "source": "github.workflow_job",
+          "source_id": "run:41342977554/attempt:1/124956729999"
+        }
+      },
+      "observed_at": "2026-11-01T19:43:21.416931282Z",
+      "source": "github-executions:emmett08/observatory-instrumentation",
+      "raw_sha256": "8b4a8481489462dbc99a9db60607c95f7d2143566ee4869646e2dd16f58aed5d"
+    },
+    {
+      "record": {
+        "id": "github:repository:1442160414/github.workflow_job/run:41342977554/attempt:1/124956912738/4cf2aac952a3d1b90f7a49f5ccff703a039d7a188ea2692768d5d77ab50d6bdd",
+        "kind": "source_record",
+        "data": {
+          "content_sha256": "4cf2aac952a3d1b90f7a49f5ccff703a039d7a188ea2692768d5d77ab50d6bdd",
+          "payload": {
+            "check_run_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/check-runs/124956912738",
+            "completed_at": null,
+            "conclusion": null,
+            "created_at": "2026-11-01T19:41:55Z",
+            "head_branch": "feat/reusable-adoption-kit",
+            "head_sha": "5056da34e0ca991081878119c670b88b4e9ac4a0",
+            "html_url": "https://github.com/emmett08/observatory-instrumentation/actions/runs/41342977554/job/124956912738",
+            "id": 124956912738,
+            "labels": [
+              "ubuntu-latest"
+            ],
+            "name": "Verify discovery and receipt collection",
+            "node_id": "CR_kwDOVfWfHs8AAAAdGAMsYg",
+            "run_attempt": 1,
+            "run_id": 41342977554,
+            "run_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/actions/runs/41342977554",
+            "runner_group_id": 0,
+            "runner_group_name": "GitHub Actions",
+            "runner_id": 1000023305,
+            "runner_name": "GitHub Actions 1000023305",
+            "started_at": "2026-11-01T19:41:57Z",
+            "status": "in_progress",
+            "steps": [
+              {
+                "completed_at": "2026-11-01T19:41:59Z",
+                "conclusion": "success",
+                "name": "Set up job",
+                "number": 1,
+                "started_at": "2026-11-01T19:41:58Z",
+                "status": "completed"
+              },
+              {
+                "completed_at": "2026-11-01T19:41:59Z",
+                "conclusion": "success",
+                "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+                "number": 2,
+                "started_at": "2026-11-01T19:41:59Z",
+                "status": "completed"
+              },
+              {
+                "completed_at": "2026-11-01T19:42:00Z",
+                "conclusion": "success",
+                "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+                "number": 3,
+                "started_at": "2026-11-01T19:41:59Z",
+                "status": "completed"
+              },
+              {
+                "completed_at": "2026-11-01T19:42:02Z",
+                "conclusion": "success",
+                "name": "Run actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16",
+                "number": 4,
+                "started_at": "2026-11-01T19:42:00Z",
+                "status": "completed"
+              },
+              {
+                "completed_at": "2026-11-01T19:43:17Z",
+                "conclusion": "success",
+                "name": "Build integration and pinned core",
+                "number": 5,
+                "started_at": "2026-11-01T19:42:02Z",
+                "status": "completed"
+              },
+              {
+                "completed_at": "2026-11-01T19:43:18Z",
+                "conclusion": "success",
+                "name": "Discover actual issue links and workflow runs",
+                "number": 6,
+                "started_at": "2026-11-01T19:43:17Z",
+                "status": "completed"
+              },
+              {
+                "completed_at": null,
+                "conclusion": null,
+                "name": "Collect the current run twice through the canonical collector",
+                "number": 7,
+                "started_at": "2026-11-01T19:43:18Z",
+                "status": "in_progress"
+              },
+              {
+                "completed_at": null,
+                "conclusion": null,
+                "name": "Retain public discovery and execution evidence",
+                "number": 8,
+                "started_at": null,
+                "status": "pending"
+              },
+              {
+                "completed_at": null,
+                "conclusion": null,
+                "name": "Post Run actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16",
+                "number": 14,
+                "started_at": null,
+                "status": "pending"
+              },
+              {
+                "completed_at": null,
+                "conclusion": null,
+                "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+                "number": 15,
+                "started_at": null,
+                "status": "pending"
+              },
+              {
+                "completed_at": null,
+                "conclusion": null,
+                "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+                "number": 16,
+                "started_at": null,
+                "status": "pending"
+              }
+            ],
+            "url": "https://api.github.com/repos/emmett08/observatory-instrumentation/actions/jobs/124956912738",
+            "workflow_name": "Verify reusable instrumentation"
+          },
+          "repository": "github:repository:1442160414",
+          "schema_version": 1,
+          "source": "github.workflow_job",
+          "source_id": "run:41342977554/attempt:1/124956912738"
+        }
+      },
+      "observed_at": "2026-11-01T19:43:21.416931282Z",
+      "source": "github-executions:emmett08/observatory-instrumentation",
+      "raw_sha256": "8b4a8481489462dbc99a9db60607c95f7d2143566ee4869646e2dd16f58aed5d"
+    },
+    {
+      "record": {
+        "id": "github:repository:1442160414/github.workflow_run/41342977554/b0cdc922ab9cd89293e008f542dc43fa08b54432ee54984b0b644e19977ee9ac",
+        "kind": "source_record",
+        "data": {
+          "content_sha256": "b0cdc922ab9cd89293e008f542dc43fa08b54432ee54984b0b644e19977ee9ac",
+          "payload": {
+            "actor": {
+              "avatar_url": "https://avatars.githubusercontent.com/u/85883829?v=4",
+              "events_url": "https://api.github.com/users/emmett08/events{/privacy}",
+              "followers_url": "https://api.github.com/users/emmett08/followers",
+              "following_url": "https://api.github.com/users/emmett08/following{/other_user}",
+              "gists_url": "https://api.github.com/users/emmett08/gists{/gist_id}",
+              "gravatar_id": "",
+              "html_url": "https://github.com/emmett08",
+              "id": 85883829,
+              "login": "emmett08",
+              "node_id": "MDQ6VXNlcjg1ODgzODI5",
+              "organizations_url": "https://api.github.com/users/emmett08/orgs",
+              "received_events_url": "https://api.github.com/users/emmett08/received_events",
+              "repos_url": "https://api.github.com/users/emmett08/repos",
+              "site_admin": false,
+              "starred_url": "https://api.github.com/users/emmett08/starred{/owner}{/repo}",
+              "subscriptions_url": "https://api.github.com/users/emmett08/subscriptions",
+              "type": "User",
+              "url": "https://api.github.com/users/emmett08",
+              "user_view_type": "public"
+            },
+            "artifacts_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/actions/runs/41342977554/artifacts",
+            "cancel_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/actions/runs/41342977554/cancel",
+            "check_suite_id": 112046848773,
+            "check_suite_node_id": "CS_kwDOVfWfHs8AAAAaFoM7BQ",
+            "check_suite_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/check-suites/112046848773",
+            "conclusion": null,
+            "created_at": "2026-11-01T19:41:11Z",
+            "display_title": "Add reusable action, Go installer and automatic evidence discovery",
+            "event": "pull_request",
+            "head_branch": "feat/reusable-adoption-kit",
+            "head_commit": {
+              "author": {
+                "email": "emmett.miller7@outlook.com",
+                "name": "Emmett Miller"
+              },
+              "committer": {
+                "email": "emmett.miller7@outlook.com",
+                "name": "Emmett Miller"
+              },
+              "id": "5056da34e0ca991081878119c670b88b4e9ac4a0",
+              "message": "Pin adoption instructions to the initial implementation",
+              "timestamp": "2026-11-01T19:40:51Z",
+              "tree_id": "c90c8aaa55b58ab295a5e6469b1a0de61d8ff08b"
+            },
+            "head_repository": {
+              "archive_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/{archive_format}{/ref}",
+              "assignees_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/assignees{/user}",
+              "blobs_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/git/blobs{/sha}",
+              "branches_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/branches{/branch}",
+              "collaborators_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/collaborators{/collaborator}",
+              "comments_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/comments{/number}",
+              "commits_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/commits{/sha}",
+              "compare_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/compare/{base}...{head}",
+              "contents_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/contents/{+path}",
+              "contributors_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/contributors",
+              "deployments_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/deployments",
+              "description": null,
+              "downloads_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/downloads",
+              "events_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/events",
+              "fork": false,
+              "forks_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/forks",
+              "full_name": "emmett08/observatory-instrumentation",
+              "git_commits_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/git/commits{/sha}",
+              "git_refs_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/git/refs{/sha}",
+              "git_tags_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/git/tags{/sha}",
+              "hooks_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/hooks",
+              "html_url": "https://github.com/emmett08/observatory-instrumentation",
+              "id": 1442160414,
+              "issue_comment_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/issues/comments{/number}",
+              "issue_events_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/issues/events{/number}",
+              "issues_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/issues{/number}",
+              "keys_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/keys{/key_id}",
+              "labels_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/labels{/name}",
+              "languages_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/languages",
+              "merges_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/merges",
+              "milestones_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/milestones{/number}",
+              "name": "observatory-instrumentation",
+              "node_id": "R_kgDOVfWfHg",
+              "notifications_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/notifications{?since,all,participating}",
+              "owner": {
+                "avatar_url": "https://avatars.githubusercontent.com/u/85883829?v=4",
+                "events_url": "https://api.github.com/users/emmett08/events{/privacy}",
+                "followers_url": "https://api.github.com/users/emmett08/followers",
+                "following_url": "https://api.github.com/users/emmett08/following{/other_user}",
+                "gists_url": "https://api.github.com/users/emmett08/gists{/gist_id}",
+                "gravatar_id": "",
+                "html_url": "https://github.com/emmett08",
+                "id": 85883829,
+                "login": "emmett08",
+                "node_id": "MDQ6VXNlcjg1ODgzODI5",
+                "organizations_url": "https://api.github.com/users/emmett08/orgs",
+                "received_events_url": "https://api.github.com/users/emmett08/received_events",
+                "repos_url": "https://api.github.com/users/emmett08/repos",
+                "site_admin": false,
+                "starred_url": "https://api.github.com/users/emmett08/starred{/owner}{/repo}",
+                "subscriptions_url": "https://api.github.com/users/emmett08/subscriptions",
+                "type": "User",
+                "url": "https://api.github.com/users/emmett08",
+                "user_view_type": "public"
+              },
+              "private": false,
+              "pulls_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/pulls{/number}",
+              "releases_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/releases{/id}",
+              "stargazers_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/stargazers",
+              "statuses_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/statuses/{sha}",
+              "subscribers_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/subscribers",
+              "subscription_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/subscription",
+              "tags_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/tags",
+              "teams_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/teams",
+              "trees_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/git/trees{/sha}",
+              "url": "https://api.github.com/repos/emmett08/observatory-instrumentation"
+            },
+            "head_sha": "5056da34e0ca991081878119c670b88b4e9ac4a0",
+            "html_url": "https://github.com/emmett08/observatory-instrumentation/actions/runs/41342977554",
+            "id": 41342977554,
+            "jobs_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/actions/runs/41342977554/jobs",
+            "logs_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/actions/runs/41342977554/logs",
+            "name": "Verify reusable instrumentation",
+            "node_id": "WFR_kwLOVfWfHs8AAAAJoDvGEg",
+            "path": ".github/workflows/ci.yml",
+            "previous_attempt_url": null,
+            "pull_requests": [
+              {
+                "base": {
+                  "ref": "main",
+                  "repo": {
+                    "id": 1442160414,
+                    "name": "observatory-instrumentation",
+                    "url": "https://api.github.com/repos/emmett08/observatory-instrumentation"
+                  },
+                  "sha": "bcaa9d02eebfd0052752a2618c63b5589bb3bdab"
+                },
+                "head": {
+                  "ref": "feat/reusable-adoption-kit",
+                  "repo": {
+                    "id": 1442160414,
+                    "name": "observatory-instrumentation",
+                    "url": "https://api.github.com/repos/emmett08/observatory-instrumentation"
+                  },
+                  "sha": "5056da34e0ca991081878119c670b88b4e9ac4a0"
+                },
+                "id": 5110866243,
+                "number": 2,
+                "url": "https://api.github.com/repos/emmett08/observatory-instrumentation/pulls/2"
+              }
+            ],
+            "referenced_workflows": [],
+            "repository": {
+              "archive_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/{archive_format}{/ref}",
+              "assignees_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/assignees{/user}",
+              "blobs_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/git/blobs{/sha}",
+              "branches_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/branches{/branch}",
+              "collaborators_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/collaborators{/collaborator}",
+              "comments_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/comments{/number}",
+              "commits_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/commits{/sha}",
+              "compare_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/compare/{base}...{head}",
+              "contents_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/contents/{+path}",
+              "contributors_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/contributors",
+              "deployments_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/deployments",
+              "description": null,
+              "downloads_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/downloads",
+              "events_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/events",
+              "fork": false,
+              "forks_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/forks",
+              "full_name": "emmett08/observatory-instrumentation",
+              "git_commits_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/git/commits{/sha}",
+              "git_refs_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/git/refs{/sha}",
+              "git_tags_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/git/tags{/sha}",
+              "hooks_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/hooks",
+              "html_url": "https://github.com/emmett08/observatory-instrumentation",
+              "id": 1442160414,
+              "issue_comment_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/issues/comments{/number}",
+              "issue_events_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/issues/events{/number}",
+              "issues_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/issues{/number}",
+              "keys_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/keys{/key_id}",
+              "labels_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/labels{/name}",
+              "languages_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/languages",
+              "merges_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/merges",
+              "milestones_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/milestones{/number}",
+              "name": "observatory-instrumentation",
+              "node_id": "R_kgDOVfWfHg",
+              "notifications_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/notifications{?since,all,participating}",
+              "owner": {
+                "avatar_url": "https://avatars.githubusercontent.com/u/85883829?v=4",
+                "events_url": "https://api.github.com/users/emmett08/events{/privacy}",
+                "followers_url": "https://api.github.com/users/emmett08/followers",
+                "following_url": "https://api.github.com/users/emmett08/following{/other_user}",
+                "gists_url": "https://api.github.com/users/emmett08/gists{/gist_id}",
+                "gravatar_id": "",
+                "html_url": "https://github.com/emmett08",
+                "id": 85883829,
+                "login": "emmett08",
+                "node_id": "MDQ6VXNlcjg1ODgzODI5",
+                "organizations_url": "https://api.github.com/users/emmett08/orgs",
+                "received_events_url": "https://api.github.com/users/emmett08/received_events",
+                "repos_url": "https://api.github.com/users/emmett08/repos",
+                "site_admin": false,
+                "starred_url": "https://api.github.com/users/emmett08/starred{/owner}{/repo}",
+                "subscriptions_url": "https://api.github.com/users/emmett08/subscriptions",
+                "type": "User",
+                "url": "https://api.github.com/users/emmett08",
+                "user_view_type": "public"
+              },
+              "private": false,
+              "pulls_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/pulls{/number}",
+              "releases_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/releases{/id}",
+              "stargazers_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/stargazers",
+              "statuses_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/statuses/{sha}",
+              "subscribers_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/subscribers",
+              "subscription_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/subscription",
+              "tags_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/tags",
+              "teams_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/teams",
+              "trees_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/git/trees{/sha}",
+              "url": "https://api.github.com/repos/emmett08/observatory-instrumentation"
+            },
+            "rerun_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/actions/runs/41342977554/rerun",
+            "run_attempt": 1,
+            "run_number": 1,
+            "run_started_at": "2026-11-01T19:41:11Z",
+            "status": "in_progress",
+            "triggering_actor": {
+              "avatar_url": "https://avatars.githubusercontent.com/u/85883829?v=4",
+              "events_url": "https://api.github.com/users/emmett08/events{/privacy}",
+              "followers_url": "https://api.github.com/users/emmett08/followers",
+              "following_url": "https://api.github.com/users/emmett08/following{/other_user}",
+              "gists_url": "https://api.github.com/users/emmett08/gists{/gist_id}",
+              "gravatar_id": "",
+              "html_url": "https://github.com/emmett08",
+              "id": 85883829,
+              "login": "emmett08",
+              "node_id": "MDQ6VXNlcjg1ODgzODI5",
+              "organizations_url": "https://api.github.com/users/emmett08/orgs",
+              "received_events_url": "https://api.github.com/users/emmett08/received_events",
+              "repos_url": "https://api.github.com/users/emmett08/repos",
+              "site_admin": false,
+              "starred_url": "https://api.github.com/users/emmett08/starred{/owner}{/repo}",
+              "subscriptions_url": "https://api.github.com/users/emmett08/subscriptions",
+              "type": "User",
+              "url": "https://api.github.com/users/emmett08",
+              "user_view_type": "public"
+            },
+            "updated_at": "2026-11-01T19:41:57Z",
+            "url": "https://api.github.com/repos/emmett08/observatory-instrumentation/actions/runs/41342977554",
+            "workflow_id": 403828776,
+            "workflow_url": "https://api.github.com/repos/emmett08/observatory-instrumentation/actions/workflows/403828776"
+          },
+          "repository": "github:repository:1442160414",
+          "schema_version": 1,
+          "source": "github.workflow_run",
+          "source_id": "41342977554"
+        }
+      },
+      "observed_at": "2026-11-01T19:43:21.416931282Z",
+      "source": "github-executions:emmett08/observatory-instrumentation",
+      "raw_sha256": "8b4a8481489462dbc99a9db60607c95f7d2143566ee4869646e2dd16f58aed5d"
+    }
+  ],
+  "sha256": "bb11d3c78120329810ee3f9298914a8b3483c52bb5e75590d4d197e542d2d56e"
+}

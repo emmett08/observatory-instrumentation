@@ -1,0 +1,11 @@
+{
+  "reports": [
+    {
+      "json": "task-d38d0d69fc5cd8c8.json",
+      "markdown": "task-d38d0d69fc5cd8c8.md",
+      "sha256": "28a2ea960cbe405e2201d61256983591e85773d58683be7f9fdb640ccd8dd1c7",
+      "task_id": "github-issue-1442160414-1"
+    }
+  ],
+  "schema": "observatory.pilot-report-index/1"
+}

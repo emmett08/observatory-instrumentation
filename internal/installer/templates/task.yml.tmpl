@@ -1,0 +1,37 @@
+name: Observatory study task
+description: Register a task issue that an implementation PR can link to automatically.
+title: "[Study task] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Open an implementation PR with `Closes #<this issue number>` in its description. Observatory reads GitHub's closing-issue relationship; it does not infer task identity from commit text or workflow duration. The task ID is derived from this issue's stable repository ID and number unless the study config registers an explicit alias.
+
+        Link one task issue for automatic unambiguous attribution. Multiple closing issues leave the selected execution's task unknown. Protocol and task registration are study declarations, not proof of acceptance or human effort.
+  - type: input
+    id: protocol
+    attributes:
+      label: Protocol ID
+      value: [[yaml .Protocol]]
+      description: Must match the reviewed study configuration. Editing this field does not reconfigure the action.
+    validations:
+      required: true
+  - type: textarea
+    id: objective
+    attributes:
+      label: Objective and scope
+      description: Explain the intended change and what is included in this task.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance evidence
+      description: State how acceptance and retained quality will be checked separately from tool execution.
+    validations:
+      required: true
+  - type: textarea
+    id: links
+    attributes:
+      label: Relevant requirements and context
+      description: Use designated public references only. Exclude credentials, prompts, private activity and sampled-response files.

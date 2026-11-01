@@ -1,0 +1,53 @@
+name: Observatory instrumented check
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: read
+  pull-requests: read
+
+concurrency:
+  group: observatory-${{ github.workflow }}-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  instrumented-check:
+    name: Instrumented check (ubuntu-latest)
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out the proposed change
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      # Add the selected tool's installation/dependency steps here when needed.
+      - name: Configure Observatory recording and task linkage
+        id: evidence
+        uses: emmett08/observatory-instrumentation@[[.ActionRef]]
+        env:
+          GH_TOKEN: ${{ github.token }}
+        with:
+          config: .observatory/config.json
+          controller: unknown
+          job-name: Instrumented check (ubuntu-latest)
+      - name: Run the selected command with an execution receipt
+        env:
+          TASK_RESOLUTION: ${{ steps.evidence.outputs.resolution-path }}
+        shell: bash
+        run: |
+          python3 "$OBSERVATORY_RECORDER" run \
+            --tool [[shell .Tool]] --tool-version [[shell .ToolVersion]] \
+            --purpose development --check-name selected-check \
+            --logical-call-id selected-check \
+            --input instrumentation-config=.observatory/config.json \
+            --input task-resolution="$TASK_RESOLUTION" \
+            -- [[.Command]]
+      - name: Publish the job's immutable receipt bundle
+        if: always() && steps.evidence.outcome == 'success'
+        uses: emmett08/observatory-instrumentation@[[.ActionRef]]
+        with:
+          mode: publish
+          directory: ${{ steps.evidence.outputs.directory }}

@@ -1,0 +1,212 @@
+# Copy to .github/workflows/observatory-private.yml in a PRIVATE control repo.
+# This file is a template; it is not enabled by publishing this repository.
+name: Private Observatory collection and sampled effort
+
+on:
+  schedule:
+    - cron: '15 19,21 * * 1-5'
+  workflow_dispatch:
+    inputs:
+      operation:
+        description: Discover and collect, prepare sampled forms, or report returned responses
+        type: choice
+        default: collect-and-report
+        required: true
+        options: [collect-and-report, collect, prepare, report]
+      day:
+        description: Batch UTC date YYYY-MM-DD; empty selects today
+        type: string
+        default: ''
+      publish_comment:
+        description: Publish task aggregates to their registered issues and PRs
+        type: boolean
+        default: false
+        required: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: private-observatory-collection
+  cancel-in-progress: false
+
+jobs:
+  private-observatory:
+    # Do not add pull_request, pull_request_target or workflow_run triggers here.
+    if: >-
+      github.event.repository.private == true &&
+      github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+    runs-on: [self-hosted, linux, effort-collector]
+    timeout-minutes: 45
+    env:
+      PRIVATE_ROOT: ${{ vars.OBSERVATORY_PRIVATE_ROOT }}
+      SAMPLE_SIZE: ${{ vars.OBSERVATORY_SAMPLE_SIZE }}
+      ACTIVITY_EXPORT: ${{ vars.OBSERVATORY_ACTIVITY_EXPORT }}
+      OPERATION: ${{ inputs.operation || 'collect-and-report' }}
+      BATCH_DAY: ${{ inputs.day }}
+      CARGO_INCREMENTAL: '0'
+    steps:
+      - name: Check out reviewed integration code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: emmett08/observatory-instrumentation
+          ref: 2d6670db2d5c9e4888e64ef49ec1f817868ba5f3
+          path: integration
+          persist-credentials: false
+      - name: Check out reviewed Observatory core
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: emmett08/engineering-work-observatory
+          ref: 32420a941a97221709447f8b71d6715216c566e9
+          path: core
+          persist-credentials: false
+      - name: Validate durable private storage
+        id: storage
+        run: |
+          set -euo pipefail
+          umask 077
+          python3 - <<'PY'
+          import datetime, os, pathlib
+          raw = os.environ['PRIVATE_ROOT']
+          if not raw or not pathlib.Path(raw).is_absolute() or '\n' in raw or '\r' in raw:
+              raise SystemExit('OBSERVATORY_PRIVATE_ROOT must be an absolute private directory.')
+          root = pathlib.Path(raw).resolve()
+          workspace = pathlib.Path(os.environ['GITHUB_WORKSPACE']).resolve()
+          if root == workspace or workspace in root.parents:
+              raise SystemExit('Keep private evidence outside the checkout workspace.')
+          root.mkdir(parents=True, exist_ok=True, mode=0o700)
+          if root.stat().st_uid != os.geteuid() or root.stat().st_mode & 0o077:
+              raise SystemExit('Private storage must belong to the runner and be inaccessible to other users.')
+          day = os.environ['BATCH_DAY'] or datetime.datetime.now(datetime.timezone.utc).date().isoformat()
+          if datetime.date.fromisoformat(day).isoformat() != day:
+              raise SystemExit('Batch date must be YYYY-MM-DD.')
+          if os.environ['OPERATION'] not in {'collect-and-report', 'collect', 'prepare', 'report'}:
+              raise SystemExit('Unsupported operation.')
+          current = root / 'runs' / (os.environ['GITHUB_RUN_ID'] + '-' + os.environ['GITHUB_RUN_ATTEMPT'])
+          current.mkdir(parents=True, exist_ok=False, mode=0o700)
+          with open(os.environ['GITHUB_ENV'], 'a') as output:
+              output.write(f'PRIVATE_ROOT={root}\nBATCH_DAY={day}\nCURRENT_RUN={current}\n')
+          PY
+      - name: Build the reviewed tools
+        id: build
+        run: |
+          set -euo pipefail
+          umask 077
+          (cd integration && go build -o "$CURRENT_RUN/observatory-instrumentation" ./cmd/observatory-instrumentation) > "$CURRENT_RUN/go-build.log" 2>&1
+          (cd core && cargo build --locked --release) > "$CURRENT_RUN/core-build.log" 2>&1
+      - name: Discover new runs and actual issue relationships
+        id: discover
+        env:
+          GH_TOKEN: ${{ secrets.OBSERVATORY_READ_TOKEN }}
+        run: |
+          set -euo pipefail
+          umask 077
+          if ! "$CURRENT_RUN/observatory-instrumentation" discover \
+            --config "$PRIVATE_ROOT/config.json" \
+            --output-dir "$CURRENT_RUN/discovery" \
+            > "$CURRENT_RUN/discover.log" 2>&1; then
+            echo 'Discovery is incomplete. Retained selected runs will still be collected.'
+            exit 1
+          fi
+      - name: Collect every discovered run, including unresolved tasks
+        id: collect
+        if: >-
+          always() && !cancelled() && steps.build.outcome == 'success'
+        run: |
+          set -euo pipefail
+          umask 077
+          test -f "$CURRENT_RUN/discovery/discovery.json"
+          if ! python3 integration/templates/collect_discovered.py \
+            --discovery "$CURRENT_RUN/discovery/discovery.json" \
+            --state "$PRIVATE_ROOT/executions" \
+            --observatory core/target/release/observatory \
+            --outcome "$CURRENT_RUN/collection.json" \
+            > "$CURRENT_RUN/collect.log" 2>&1; then
+            echo 'Collection is incomplete. Retained coverage and diagnostics remain private.'
+            exit 1
+          fi
+        env:
+          GH_TOKEN: ${{ secrets.OBSERVATORY_READ_TOKEN }}
+      - name: Prepare private sampled forms after the declared window
+        if: >-
+          github.event_name == 'workflow_dispatch' && inputs.operation == 'prepare' &&
+          steps.discover.outcome == 'success'
+        run: |
+          set -euo pipefail
+          umask 077
+          batch="$PRIVATE_ROOT/batches/$BATCH_DAY"
+          mkdir -p "$batch"
+          if [[ ! -f "$batch/inputs/ready" ]]; then
+            if [[ -e "$batch/inputs" ]]; then
+              echo 'An incomplete preparation exists. Review its retained inputs before retrying.'
+              exit 1
+            fi
+            mkdir "$batch/inputs"
+            test -f "$CURRENT_RUN/discovery/manifest.json"
+            "$CURRENT_RUN/observatory-instrumentation" link-effort \
+              --template "$PRIVATE_ROOT/effort-template.json" \
+              --discovery "$CURRENT_RUN/discovery" \
+              --output "$batch/inputs/config.json" > "$CURRENT_RUN/link-effort.log" 2>&1
+            cp "$CURRENT_RUN/discovery/manifest.json" "$batch/inputs/manifest.json"
+            cp "$CURRENT_RUN/discovery/discovery.json" "$batch/inputs/discovery.json"
+            cp "$CURRENT_RUN/discovery/effort-links.json" "$batch/inputs/effort-links.json"
+            touch "$batch/inputs/ready"
+          fi
+          source_args=(--server http://127.0.0.1:5600)
+          if [[ -n "$ACTIVITY_EXPORT" ]]; then
+            source_args=(--export "$ACTIVITY_EXPORT")
+          fi
+          if ! python3 core/instrumentation/pilot.py prepare \
+            --config "$batch/inputs/config.json" \
+            --day "$BATCH_DAY" --size "$SAMPLE_SIZE" --directory "$batch" \
+            "${source_args[@]}" > "$CURRENT_RUN/prepare.log" 2>&1; then
+            echo 'Preparation failed. Inspect the private log; no responses were invented.'
+            exit 1
+          fi
+          echo 'Private participant review forms are ready. Retain returned JSON in the batch responses directory.'
+      - name: Report available evidence
+        if: >-
+          always() && !cancelled() && steps.build.outcome == 'success' &&
+          (inputs.operation == 'report' || inputs.operation == 'collect-and-report' || github.event_name == 'schedule')
+        env:
+          # The core publisher currently requires a user token for GET /user.
+          GH_TOKEN: ${{ github.event_name == 'workflow_dispatch' && inputs.publish_comment && steps.discover.outcome == 'success' && steps.collect.outcome == 'success' && secrets.OBSERVATORY_PUBLISH_TOKEN || '' }}
+          PUBLISH_REQUESTED: ${{ github.event_name == 'workflow_dispatch' && inputs.publish_comment }}
+          PUBLISH_ALLOWED: ${{ steps.discover.outcome == 'success' && steps.collect.outcome == 'success' }}
+        run: |
+          set -euo pipefail
+          umask 077
+          args=()
+          manifest="$CURRENT_RUN/discovery/manifest.json"
+          batch="$PRIVATE_ROOT/batches/$BATCH_DAY"
+          if [[ -f "$batch/frame.json" ]]; then
+            test -f "$batch/inputs/manifest.json"
+            manifest="$batch/inputs/manifest.json"
+            args+=(--batch "$batch")
+          fi
+          if [[ ! -f "$manifest" ]]; then
+            echo 'No resolved task manifest is available. Private discovery/collection coverage is retained; human effort remains unavailable.'
+            exit 0
+          fi
+          publication_blocked=false
+          if [[ "$PUBLISH_REQUESTED" == 'true' ]]; then
+            if [[ "$PUBLISH_ALLOWED" != 'true' ]]; then
+              echo 'Publication requires complete current discovery and collection. The report will remain private.'
+              publication_blocked=true
+            else
+              test -n "$GH_TOKEN"
+              args+=(--publish)
+            fi
+          fi
+          if ! python3 core/instrumentation/pilot.py report \
+            --manifest "$manifest" --state "$PRIVATE_ROOT/executions" \
+            --observatory core/target/release/observatory \
+            --output-dir "$CURRENT_RUN/reports" "${args[@]}" \
+            > "$CURRENT_RUN/report.log" 2>&1; then
+            echo 'Reporting failed. Inspect the private log.'
+            exit 1
+          fi
+          echo 'Reports retained privately. Missing activity or responses leave human estimates unavailable.'
+          if [[ "$publication_blocked" == 'true' ]]; then
+            exit 1
+          fi

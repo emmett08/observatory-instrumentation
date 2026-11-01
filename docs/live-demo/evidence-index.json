@@ -1,0 +1,20 @@
+{
+  "schema": "observatory.integration-demo-evidence/1",
+  "workflow_run_url": "https://github.com/emmett08/observatory-instrumentation/actions/runs/41342977554",
+  "integration_revision": "5056da34e0ca991081878119c670b88b4e9ac4a0",
+  "core_revision": "32420a941a97221709447f8b71d6715216c566e9",
+  "artifact_id": 13098327286,
+  "archive_sha256": "17376336429481cfa49a241c5617b3f8c78238653231d43ca18f2da1572cd5d6",
+  "files_sha256": {
+    "discovery.json": "97fc7afeeaacd8888d4e2e74257f1c4fc7d84ace4d581b4bbb0cec0d11ff3f20",
+    "effort-links.json": "cec2ebe3232f233aa2e45147311d926d912443084bca7c0cb6b91d35001eed26",
+    "macos-bundle.json": "c42f69b02de97e5f11f1252286b260cc8981dc7c69fefe5c285c62c501372703",
+    "manifest.json": "10639de4abf5ad1a3dba63d75fe0633628725260d3966bd19400cfdb3740eb77",
+    "report-index.json": "1378dae690aec05b956296b0a37ae6b33d4ef03d93a32a1bfede4f39ac4e72a9",
+    "snapshot.json": "e969c5d4a5dadcc7f06960e5c948ea1840466b1f7f2fa13136b19c80691fccea",
+    "task-d38d0d69fc5cd8c8.json": "bb54dc750d7b09ff641d737fc6a1962ea95481d40e7da140ee42a646bf9d058c",
+    "task-d38d0d69fc5cd8c8.md": "bd0ddfa5d09d1b8c948900a5ee277af4cc2d5a3f36ab2e5ddbee869cd954bf76",
+    "ubuntu-bundle.json": "be0a5951f97dcd6ee4d6ead022634c07e58e2979bf79c57f1a594a517eefc654",
+    "verification.json": "d5b953c93ef29e95e0ef4913216d5a327a7cd06735484783df92dac4f9c8ae29"
+  }
+}

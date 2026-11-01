@@ -1,0 +1,118 @@
+name: Verify reusable instrumentation
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+
+jobs:
+  verify:
+    name: Instrumentation (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Configure the action under test
+        id: evidence
+        uses: ./
+        with:
+          job-name: Instrumentation (${{ matrix.os }})
+          matrix: '{"os":"${{ matrix.os }}"}'
+      - name: Check formatting and static analysis
+        run: |
+          test -z "$(gofmt -l cmd internal)"
+          go vet ./...
+      - name: Test with an explicit receipt
+        env:
+          RESOLUTION_PATH: ${{ steps.evidence.outputs.resolution-path }}
+          TMPDIR: ${{ runner.temp }}
+        run: |
+          python3 "$OBSERVATORY_RECORDER" run \
+            --tool go --tool-version "$(go version)" --purpose development \
+            --check-name integration-tests --logical-call-id integration-tests \
+            --input instrumentation-config=.observatory/config.json \
+            --input task-resolution="$RESOLUTION_PATH" \
+            -- go test -race ./...
+      - name: Test private collection orchestration
+        run: |
+          python3 -m unittest discover -s templates -p 'test_*.py'
+          python3 -m unittest discover -s test -p 'test_*.py'
+      - name: Publish this job's receipts
+        if: always() && steps.evidence.outcome == 'success'
+        uses: ./
+        with:
+          mode: publish
+          directory: ${{ steps.evidence.outputs.directory }}
+
+  collect:
+    name: Verify discovery and receipt collection
+    needs: verify
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      CARGO_PROFILE_DEV_DEBUG: line-tables-only
+      CARGO_INCREMENTAL: '0'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          path: integration
+          persist-credentials: false
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: emmett08/engineering-work-observatory
+          ref: 32420a941a97221709447f8b71d6715216c566e9
+          path: core
+          persist-credentials: false
+      - uses: actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16 # v6
+        with:
+          go-version: '1.26.10'
+          cache: false
+      - name: Build integration and pinned core
+        run: |
+          cd integration
+          go build -o "$RUNNER_TEMP/observatory-instrumentation" ./cmd/observatory-instrumentation
+          cd ../core
+          rustup toolchain install 1.99.1 --profile minimal
+          cargo build --locked
+      - name: Discover actual issue links and workflow runs
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          "$RUNNER_TEMP/observatory-instrumentation" discover \
+            --config integration/.observatory/config.json \
+            --output-dir "$RUNNER_TEMP/discovery"
+      - name: Collect the current run twice through the canonical collector
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          state="$RUNNER_TEMP/collected"
+          for delivery in first second; do
+            core/target/debug/observatory --state "$state/store" collect-github-executions \
+              --repository "$GITHUB_REPOSITORY" --run-id "$GITHUB_RUN_ID"
+            core/target/debug/observatory --state "$state/store" verify
+            core/target/debug/observatory --state "$state/store" snapshot --output "$state/$delivery.json"
+          done
+          python3 integration/test/verify_live.py "$RUNNER_TEMP/discovery" "$state" "$GITHUB_RUN_ID"
+      - name: Retain public discovery and execution evidence
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          archive: true
+          name: instrumentation-validation-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            ${{ runner.temp }}/discovery/
+            ${{ runner.temp }}/collected/
+          if-no-files-found: warn
+          retention-days: 30
