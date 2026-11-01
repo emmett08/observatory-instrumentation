@@ -11,7 +11,7 @@ Clone this public repository at a reviewed commit and build its Go CLI:
 ```sh
 git clone https://github.com/emmett08/observatory-instrumentation.git
 cd observatory-instrumentation
-git checkout 2d6670db2d5c9e4888e64ef49ec1f817868ba5f3
+git checkout 373f9daaaae6ae69a62e1e10c497b646cab43529
 go build -o /tmp/observatory-instrumentation ./cmd/observatory-instrumentation
 integration_revision=$(git rev-parse HEAD)
 ```
@@ -42,11 +42,18 @@ The generated files are:
 - `.observatory/config.json`: protocol, repositories, selected workflows and optional task aliases.
 - `.github/workflows/observatory.yml`: setup, explicit command wrapper and publication.
 - `.github/ISSUE_TEMPLATE/observatory-task.yml`: task registration and acceptance context.
-- `.github/ISSUE_TEMPLATE/effort-observation.yml`: optional aggregate self-report.
+- `.github/ISSUE_TEMPLATE/effort-observation.yml`: versioned public declared effort with explicit unknowns.
 - `docs/observatory.md`: repository-specific directions.
 
 Existing conflicting files are not overwritten. Choose a clean worktree for
 adoption and review any earlier integration instead of deleting it blindly.
+
+For automatic import of public declarations, follow the separate
+[GitHub-hosted observation demo](automatic-effort-improvement.md). Its collector
+requires configured public sources and task mappings. Installing a form alone
+does not register a repository with that collector. Existing installations can
+review and replace the old form with this version; `init` deliberately refuses
+to overwrite a different form.
 
 To have the CLI create the adoption PR, use `adopt` instead of `init`, with the
 same flags plus `--branch observatory/adoption`. This explicitly creates a

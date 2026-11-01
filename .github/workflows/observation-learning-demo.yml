@@ -1,0 +1,34 @@
+name: Public observation learning demo
+
+on:
+  workflow_dispatch:
+    inputs:
+      bootstrap:
+        description: Start the first trusted history only when no previous checkpoint exists
+        type: boolean
+        default: false
+  schedule:
+    - cron: '23 7 * * 1'
+  pull_request:
+    paths:
+      - '.github/workflows/observation-learning-demo.yml'
+      - '.github/ISSUE_TEMPLATE/effort-observation.yml'
+      - 'internal/installer/templates/effort.yml.tmpl'
+      - 'docs/automatic-effort-improvement.md'
+      - 'test/test_contract.py'
+
+permissions:
+  contents: read
+  issues: read
+  actions: read
+
+concurrency:
+  group: observation-learning-caller-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  learn:
+    uses: emmett08/engineering-work-observatory/.github/workflows/observation-learning-demo.yml@159f3de6345d1f787922a52e642e21b7373f4659
+    with:
+      core-ref: '159f3de6345d1f787922a52e642e21b7373f4659'
+      bootstrap: ${{ inputs.bootstrap || false }}

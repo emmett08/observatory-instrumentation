@@ -1,13 +1,21 @@
 name: Optional effort observation
-description: Record an occasional declared effort summary; keep private activity and sampled responses off GitHub.
+description: Record a public declared effort summary for automatic import; keep private activity off GitHub.
 title: "[Effort observation] "
 body:
   - type: markdown
     attributes:
       value: |
-        This public issue is an optional self-report. It is supporting evidence, not a direct measurement or a probability-sampled response. Unknown effort is acceptable. Do not infer hours from CI duration, commit timestamps or an assistant's estimate.
+        This public issue records a declaration, not a direct measurement or a probability-sampled response. Unknown effort is acceptable. Do not infer minutes from CI duration, issue timestamps or an assistant's estimate. The posting account need not identify the person who performed the work.
 
-        Use the private generated review form for sampled calibration. Its response is bound to a frozen frame and selected intervals. Do not attach that response file or raw activity here. This issue is not automatically inserted into the estimator.
+        A configured public observation importer can retain this issue when open or closed. Only suitable complete task observations enter the separate task-total prediction demo. This issue never substitutes for a private sampled response. Do not attach raw activity, participant response files, credentials or private context.
+  - type: input
+    id: schema
+    attributes:
+      label: Observation schema
+      description: Keep this version unchanged so the importer can validate the fields.
+      value: "observatory.effort-observation/1"
+    validations:
+      required: true
   - type: input
     id: protocol
     attributes:
@@ -18,62 +26,80 @@ body:
   - type: input
     id: task
     attributes:
-      label: Task issue and related PR
-      description: Link the issue and PR to which this observation applies. The posting account need not identify the person who performed the work.
+      label: Task issue URL
+      description: Link the task issue covered by this declaration. The collector must register the same task and protocol IDs as the execution receipts.
       placeholder: "https://github.com/emmett08/observatory-instrumentation/issues/<number>"
     validations:
       required: true
   - type: input
-    id: participant
+    id: task_id
     attributes:
-      label: Participant pseudonym (optional)
-      description: Supply only a study pseudonym suitable for public disclosure.
-  - type: input
-    id: window
+      label: Task ID (optional)
+      description: Leave blank to use the collector's configured task mapping. A supplied ID must match that mapping.
+  - type: textarea
+    id: pull_requests
     attributes:
-      label: Observation window (UTC)
-      description: Give the start and end of the covered period, or write unknown. The window itself is not an effort duration.
-    validations:
-      required: true
-  - type: dropdown
-    id: basis
-    attributes:
-      label: Observation basis
-      options:
-        - Unknown / unavailable
-        - Participant recall
-        - Participant timer or contemporaneous notes
-        - Other declared evidence (explain below)
-    validations:
-      required: true
+      label: Related PR URLs (optional)
+      description: One PR URL per line. Leave blank to use the collector's registered PR links.
   - type: input
     id: minutes
     attributes:
-      label: Human person-minutes (optional)
-      description: Enter a supported value or range, or unknown. Enter zero only for explicitly observed no work.
-      placeholder: "unknown"
+      label: Declared human person-minutes
+      description: Enter one non-negative number or unknown. Sum people's working minutes only when the declared scope covers them; exclude waiting and unattended tool time. Enter zero only for explicitly observed no work.
+      value: "unknown"
+    validations:
+      required: true
   - type: dropdown
-    id: role
+    id: method
     attributes:
-      label: Work role
+      label: Measurement method
+      description: Choose timer for recorded working time, recall for remembered effort, or unknown when the basis is unavailable.
       options:
-        - Unknown / mixed (explain below)
-        - Specification
-        - Implementation
-        - Review
-        - Testing
-        - Coordination
-        - Repair
-        - Other
-  - type: textarea
+        - unknown
+        - recall
+        - timer
+      default: 0
+    validations:
+      required: true
+  - type: dropdown
+    id: coverage
+    attributes:
+      label: Coverage
+      description: Complete means all human effort in the declared scope is covered, including other contributors. If you cannot establish that, use partial or unknown.
+      options:
+        - unknown
+        - partial
+        - complete
+      default: 0
+    validations:
+      required: true
+  - type: dropdown
     id: scope
     attributes:
-      label: Scope, overlap and uncertainty
-      description: Explain what is included and possible double counting. Exclude window titles, file paths, credentials, prompts and private responses.
+      label: Scope
+      description: Task total includes all human work for the linked task. Choose partial_task for only part of it, or unknown if the boundary is unclear.
+      options:
+        - unknown
+        - partial_task
+        - task_total
+      default: 0
+    validations:
+      required: true
+  - type: input
+    id: completed_at
+    attributes:
+      label: Work completed at (UTC, optional or unknown)
+      description: If known, use an RFC3339 UTC timestamp such as 2026-11-01T12:00:00Z. This timestamp is not an effort duration.
+      value: "unknown"
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes (optional)
+      description: Explain boundaries, overlap or uncertainty using only information suitable for public disclosure. The importer does not infer missing values from prose.
   - type: checkboxes
     id: provenance
     attributes:
       label: Provenance
       options:
-        - label: I understand this is declared supporting evidence and is not automatically used as a sampled response or accepted as ground truth.
+        - label: I understand this is declared supporting evidence, not verified ground truth or a sampled response; unknown values remain unknown.
           required: true

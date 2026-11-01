@@ -15,7 +15,7 @@ are separate from core receipt and effort schemas.
 | Tool/version/model/usage/result receipt | What the explicit adapter observed or was told, with missing fields retained |
 | Activity proxy | Auxiliary prediction, not an observed human duration |
 | Sampled interval response | Human declaration bound to the frozen frame and selected sample |
-| Optional public effort issue | Unbound supporting self-report, not an estimator sample |
+| Optional public effort issue | Versioned declared task effort; eligible complete totals can support task-level prediction, but are not sampled interval responses |
 
 An assistant can use a person's credentials; a person can launch an automated or
 AI workflow. Preserve the distinction. Failed, cancelled and skipped platform
@@ -47,3 +47,11 @@ and PR #50. It records the user's declared three human person-minutes separately
 from GitHub's issue/PR lifecycle timestamps. Exact work start/end and the
 timer-versus-recall method remain unknown. Such a declaration supplements the
 execution evidence; it is not automatically treated as a sampled response.
+
+The [public observation workflow](automatic-effort-improvement.md) imports this
+declaration and future configured versioned observations from open and closed
+issues. It preserves acquired revisions, deduplicates repeated deliveries and
+shows declarations beside receipts and any comparable prediction. The existing
+three-minute observation has unknown measurement method and coverage, so it is
+reportable but ineligible for model training. The separate synthetic model demo
+does not establish real predictive accuracy.

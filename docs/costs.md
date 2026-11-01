@@ -10,6 +10,13 @@ runners and storage overages have their own rates. Check the
 [current billing terms](https://docs.github.com/en/billing/concepts/product-billing/github-actions)
 and account usage before budgeting a broader rollout.
 
+The [public observation demo](automatic-effort-improvement.md) uses a standard
+Ubuntu hosted runner weekly, on manual dispatch and on relevant pull requests.
+It has no private-host or model/API cost. Four or five scheduled runs per month
+plus previews retain separate 30-day checkpoint/report artifacts. Actual API,
+build and storage usage depends on source scope and checkpoint size; a wider
+deployment should measure those rather than assume constant cost.
+
 The private workflow needs an existing trusted machine or a separately funded
 host, persistent private storage and backups. Its default two weekday runs are
 approximately 44 runs per 22-working-day month. Cold builds, API pagination,

@@ -323,16 +323,22 @@ func TestInitNeverInvokesNetworkOrGitCommands(t *testing.T) {
 	}
 }
 
-func TestUnboundEffortFormCannotClaimSampleCalibration(t *testing.T) {
+func TestVersionedEffortFormPreservesUnknownsAndSamplingBoundary(t *testing.T) {
 	root := tempDir(t)
 	if err := Run(arguments("init", root), io.Discard, io.Discard); err != nil {
 		t.Fatal(err)
 	}
 	form, _ := os.ReadFile(filepath.Join(root, ".github/ISSUE_TEMPLATE/effort-observation.yml"))
-	for _, text := range []string{"not automatically inserted into the estimator", "Unknown / unavailable", "zero only for explicitly observed no work", "Do not attach that response file or raw activity"} {
+	for _, text := range []string{"observatory.effort-observation/1", "label: Task issue URL", "label: Declared human person-minutes", "label: Measurement method", "label: Coverage", "label: Scope", "This issue never substitutes for a private sampled response", "zero only for explicitly observed no work", "Do not attach raw activity"} {
 		if !bytes.Contains(form, []byte(text)) {
 			t.Errorf("missing declared-evidence boundary: %q", text)
 		}
+	}
+	if got := bytes.Count(form, []byte("        - unknown\n")); got != 3 {
+		t.Errorf("method, coverage and scope must all offer unknown; got %d", got)
+	}
+	if got := bytes.Count(form, []byte("      default: 0\n")); got != 3 {
+		t.Errorf("method, coverage and scope must default to unknown; got %d", got)
 	}
 }
 

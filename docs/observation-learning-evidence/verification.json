@@ -1,0 +1,32 @@
+{
+  "conclusion": "success",
+  "core_sha": "159f3de6345d1f787922a52e642e21b7373f4659",
+  "declared_minutes": 3,
+  "delivered_checkpoint_verification": "passed_in_hosted_workflow",
+  "eligible_live_tasks": 0,
+  "execution_acquisition_complete": true,
+  "head_sha": "4b7b093870903550265b686b9a4a72ab19248f7b",
+  "limitations": [
+    "Synthetic promotion establishes software operation, not real predictive accuracy.",
+    "This is an isolated PR demonstration; initialize trusted default-branch history after merge.",
+    "The core and caller use the same sources; do not count them as independent observations."
+  ],
+  "live_model_decision": "observation_only",
+  "public_observation_acquisition_complete": true,
+  "report_artifact_id": 13099682739,
+  "report_artifact_sha256": "27d48c72a924870b8d98c160a4a5ca95d932df93a94e35b79b31738e4d1086eb",
+  "repository": "emmett08/observatory-instrumentation",
+  "run_attempt": 1,
+  "run_id": 41346760938,
+  "schema": "observatory.reusable-observation-demo-verification/1",
+  "scope": "isolated_demo",
+  "source_revision_id": "c5d384c016e0a9f1adc23e3c801365cc6e42b12e1f82e9e06e8283fb640b19ba",
+  "source_state": "closed",
+  "state_artifact_id": 13099014744,
+  "state_artifact_sha256": "5f0b813e5fa9ff60ce1cd73b3ae814538839ccfcb3afcba16b0f0b89ce81ea76",
+  "synthetic_decision": "promoted",
+  "synthetic_evaluation_id": "6f0e939012c061a947c8bb5724097aee5959bdb63ae7bf16f3a9fa15f9473ca8",
+  "tool_invocations": 2,
+  "tool_runtime_seconds": 42.951,
+  "url": "https://github.com/emmett08/observatory-instrumentation/actions/runs/41346760938"
+}
