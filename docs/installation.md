@@ -11,7 +11,7 @@ Clone this public repository at a reviewed commit and build its Go CLI:
 ```sh
 git clone https://github.com/emmett08/observatory-instrumentation.git
 cd observatory-instrumentation
-git checkout REVIEWED_FULL_COMMIT_SHA
+git checkout 2d6670db2d5c9e4888e64ef49ec1f817868ba5f3
 go build -o /tmp/observatory-instrumentation ./cmd/observatory-instrumentation
 integration_revision=$(git rev-parse HEAD)
 ```

@@ -50,7 +50,7 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           repository: emmett08/observatory-instrumentation
-          ref: REPLACE_WITH_REVIEWED_INTEGRATION_COMMIT_SHA
+          ref: 2d6670db2d5c9e4888e64ef49ec1f817868ba5f3
           path: integration
           persist-credentials: false
       - name: Check out reviewed Observatory core
